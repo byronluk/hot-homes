@@ -4,11 +4,11 @@ module.exports = {
   context: path.join(__dirname, '/src'),
 
   entry: {
-    javascript: './js/index'
+    javascript: './js/index',
   },
 
-  devtool: "source-map",
-  
+  devtool: 'source-map',
+ 
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, '/client'),
@@ -16,9 +16,9 @@ module.exports = {
 
   resolve: {
     alias: {
-      react: path.join(__dirname, 'node_modules', 'react')
+      react: path.join(__dirname, 'node_modules', 'react'),
     },
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
 
   module: {

@@ -1,3 +1,21 @@
 {
-  "extends": "loopback"
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "mocha": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "loopback"],
+  "rules": {
+    "semi": 2,
+    "no-console": 0
+  }
 }

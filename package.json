@@ -32,10 +32,12 @@
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
     "redux-devtools": "^3.4.1",
     "redux-promise-middleware": "^5.0.0",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^2.0.0",
+    "thunk": "0.0.1",
     "webpack": "^4.0.1",
     "webpack-cli": "^2.0.9"
   },
