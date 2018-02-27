@@ -7,8 +7,9 @@
     "node": ">=4"
   },
   "scripts": {
+    "build": "webpack",
     "lint": "eslint .",
-    "start": "node .",
+    "start": "npm run build && node .",
     "posttest": "npm run lint && nsp check"
   },
   "author": "",
@@ -26,6 +27,7 @@
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^4.0.0",
     "loopback-connector-mongodb": "^3.4.1",
+    "path": "^0.12.7",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
@@ -34,7 +36,8 @@
     "redux-promise-middleware": "^5.0.0",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^2.0.0",
-    "webpack": "^4.0.1"
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.9"
   },
   "devDependencies": {
     "eslint": "^3.17.1",

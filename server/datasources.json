@@ -1,22 +1,13 @@
 {
-  "mongodb": {
+  
+  "MongoDB": {
     "host": "",
     "port": 0,
-    "url": "mongodb://hothomes:Fagess322!@ds249798.mlab.com:49798/hothomes",
+    "url": "",
     "database": "",
     "password": "",
-    "name": "mongodb",
+    "name": "MongoDB",
     "user": "",
-    "connector": "mongodb"
-  },
-  "mlab": {
-    "host": "ds249798.mlab.com",
-    "port": 49798,
-    "url": "",
-    "database": "hothomes",
-    "password": "Fagess322!",
-    "name": "mlab",
-    "user": "hothomes",
     "connector": "mongodb"
   }
 }
