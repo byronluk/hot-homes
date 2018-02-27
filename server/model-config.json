@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "mlab"
+  },
+  "AccessToken": {
+    "dataSource": "mlab",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mlab",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mlab",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "mlab",
+    "public": false
+  },
+  "user": {
+    "dataSource": "mlab",
+    "public": true
+  },
+  "property": {
+    "dataSource": "mlab",
+    "public": true
+  },
+  "reservation": {
+    "dataSource": "mlab",
+    "public": true
+  }
+}

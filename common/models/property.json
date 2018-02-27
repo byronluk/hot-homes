@@ -1,0 +1,28 @@
+{
+  "name": "property",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "address": {
+      "type": "object",
+      "required": true
+    },
+    "description": {
+      "type": "object",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "reservations": {
+      "type": "hasMany",
+      "model": "reservation",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
