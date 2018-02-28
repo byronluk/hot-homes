@@ -1,4 +1,4 @@
-export function Login (input) {
+export function updateLogIn (input) {
 
     return {
         type: 'USER-LOGIN',
