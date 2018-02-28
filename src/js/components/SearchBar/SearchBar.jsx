@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
 
     return (
       <form>
-        <input type="text" value={ searchBar.input } onChange={ handleInputChange } />
+        <input type="text" value={ searchBar.input } onChange={ handleInputChange } placeholder="search bar" />
         <button>Search</button>
       </form>
     );

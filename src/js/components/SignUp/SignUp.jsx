@@ -75,7 +75,6 @@ class SignUp extends React.Component {
   updateForm(e) {
     const name = e.target.name;
     const value = e.target.value;
-
     this.props.dispatch(updateSignUp({ name: name, value: value }));
   }
 

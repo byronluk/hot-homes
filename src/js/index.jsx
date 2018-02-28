@@ -7,7 +7,7 @@ import reducer from './root-reducer';
 import initialState from './initial-state';
 import App from './App';
 
-const middleware = [ promiseMiddleware ];
+const middleware = [ promiseMiddleware() ];
 const enhancers = [];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
