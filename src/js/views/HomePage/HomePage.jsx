@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import SearchBar from '../../components/SearchBar';
-import NavigationBar from '../../components/NavigationBar';
+import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import SignUp from '../../components/SignUp';
 import LogIn from '../../components/LogIn';
-import Footer from '../../components/Footer';
+import Footer from '../../components/Footer/Footer';
 
 class HomePage extends React.Component {
   render() {

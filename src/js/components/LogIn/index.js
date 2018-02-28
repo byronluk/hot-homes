@@ -1,4 +1,3 @@
-
 import LogIn from './LogIn';
 import { connect } from 'react-redux';
 
@@ -8,4 +7,4 @@ function mapStatetoProps(state) {
 }
 
 
-export default connect(mapStatetoProps)(Login);
+export default connect(mapStatetoProps)(LogIn);
