@@ -1,5 +1,6 @@
-export function createUser (action) {
+import axios from 'axios';
 
+export function createUser (action) {
     return {
         type: 'CREATE_USER',
         payload: axios.post('/api/users/', action),

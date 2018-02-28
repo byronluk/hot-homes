@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUser, updateSignUp } from '../../actions/sign-up';
+import axios from 'axios';
 
 class SignUp extends React.Component {
 
@@ -31,9 +32,9 @@ class SignUp extends React.Component {
     }
 
 
-    this.isAvailable(username).then(available => {
+    axios.get('./api/users').then(data => {
 
-      if (!available) {
+      if (!this.isAvailable(data.data, username)) {
         console.log('username is already taken');
         return false;
       }
@@ -47,7 +48,11 @@ class SignUp extends React.Component {
         password: password,
         isLandlord: isLandlord,
       }))
-    });
+    })
+      .catch(err => {
+        console.log('Server error: ' + err);
+        return false;
+      });;
 
 
 
@@ -55,21 +60,17 @@ class SignUp extends React.Component {
 
   }
 
-  isAvailable(name) {
-
-    return axios.get('/api/users/')
-      .then((data) => {
-        data.forEach(entry => {
-          if (entry.username == name) {
-            return false;
-          }
-        });
-        return true;
-      })
-      .catch(err => {
-        console.log('Server error');
+  isAvailable(data, name) {
+    console.log(data);
+    data.forEach(element => {
+      
+    });(entry => {
+      if (entry.username == name) {
         return false;
-      });
+      }
+    });
+    return true;
+
   }
 
   updateForm(e) {
@@ -80,45 +81,44 @@ class SignUp extends React.Component {
 
   render() {
     const { firstName, lastName, username, email, password } = this.props;
-    console.log(firstName);
     return (
       <div>
         <form>
 
           <input
-            value={ firstName }
+            value={firstName}
             type='text'
             onChange={this.updateForm}
             name='firstName'
             placeholder='First Name'
           />
           <input
-            value={ lastName }          
+            value={lastName}
             type='text'
             onChange={this.updateForm}
             name='lastName'
             placeholder='Last Name'
           />
           <input
-            value={ username }          
+            value={username}
             type='text'
             onChange={this.updateForm}
             name='username'
             placeholder='Username'
           />
           <input
-            value={ email }            
+            value={email}
             type='text'
             onChange={this.updateForm}
             name='email'
             placeholder='Email'
           />
           <input
-            value={ password }                      
+            value={password}
             type='password'
             onChange={this.updateForm}
             name='password'
-            placeholder='Password' 
+            placeholder='Password'
           />
 
           <p>Are you planning on listing your own properties?</p>
