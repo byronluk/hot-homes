@@ -12,7 +12,7 @@ class SignUp extends React.Component {
 
   validateAndSubmit(e) {
     //don't do any silly redirects
-    const { firstName, lastName, username, email, password, isLandlord } = this.props;
+    const { firstName, lastName, username, email, password, isLandlord } = this.props.signUp;
     e.preventDefault();
 
 
@@ -80,41 +80,41 @@ class SignUp extends React.Component {
   }
 
   render() {
-    const { firstName, lastName, username, email, password } = this.props;
+    const { signUp } = this.props;
     return (
       <div>
         <form>
 
           <input
-            value={firstName}
+            value={ signUp.firstName }
             type='text'
             onChange={this.updateForm}
             name='firstName'
             placeholder='First Name'
           />
           <input
-            value={lastName}
+            value={ signUp.lastName }          
             type='text'
             onChange={this.updateForm}
             name='lastName'
             placeholder='Last Name'
           />
           <input
-            value={username}
+            value={ signUp.username }          
             type='text'
             onChange={this.updateForm}
             name='username'
             placeholder='Username'
           />
           <input
-            value={email}
+            value={ signUp.email }            
             type='text'
             onChange={this.updateForm}
             name='email'
             placeholder='Email'
           />
           <input
-            value={password}
+            value={ signUp.password }                      
             type='password'
             onChange={this.updateForm}
             name='password'

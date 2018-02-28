@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "lessc src/css/style.less client/styles.css && webpack",
+    "less": "lessc src/css/style.less client/styles.css",
     "lint": "eslint .",
     "start": "npm run build && node .",
     "posttest": "npm run lint && nsp check"

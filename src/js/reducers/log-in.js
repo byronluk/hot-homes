@@ -1,10 +1,10 @@
 import initialState from '../initial-state';
 
-export default function loginReducer(state = initialState.signup, action) {
+export default function logInReducer(state = initialState.logIn, action) {
 
   switch (action.type) {
 
-    case 'UPDATE_LOGIN_FORM': {
+    case 'UPDATE_LOG_IN_FORM': {
       const { name, value } = action.payload;
       return {
         ...state,
@@ -12,13 +12,16 @@ export default function loginReducer(state = initialState.signup, action) {
       }
     }
 
-    case 'LOGIN_USER_FULFILLED': {
-       
-        return {...state, user: action.payload}
+    case 'USER_LOGIN_FULFILLED': {
+      const { name, value } = action.payload;
+      return {
+        ...state,
+        [[name]]: value,
+      }
 
     }
 
-    case 'LOGIN_USER_REJECTED': {
+    case 'USER_LOGIN_REJECTED': {
       console.log('invalid email or password');
       return state;
     }

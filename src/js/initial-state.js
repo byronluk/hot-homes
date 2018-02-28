@@ -15,6 +15,11 @@ const initialState = {
   searchBar: {
     input: '',
   },
+
+  logIn: {
+    email: '',
+    password:''
+  }
 };
 
 export default initialState;
