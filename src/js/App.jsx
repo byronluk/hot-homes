@@ -3,12 +3,12 @@ import {
   HashRouter as Router,
   Route
 } from 'react-router-dom';
-import Home from './view/Home';
+import Home from './view/HomePage';
 import Listings from './view/ListingsPage';
 import ListingsDetail from './view/ListingsDetailPage';
 import LandlordDashboard from './view/LandlordDashboardPage';
 import Profile from './view/ProfilePage';
-import PubulishListings from './view/PublishListingsPage';
+import PublishListings from './view/PublishListingsPage';
 import RentListings from './view/RentListingsPage';
 
 export default class App extends React.Component {
@@ -21,9 +21,7 @@ export default class App extends React.Component {
           <Route path='/list/:id' component={ListingsDetail} />
           <Route path='/list/:id/:book' component={RentListings} />
           <Route path='/user' component={Profile} />
-          <Route path='/user/:id' component={LandlordDashboard} />
-          <Route path='/user/:id/:publish' component={PubulishListing} />
-          
+          <Route path='/user/publish' component={PublishListing} />          
         </div>
       </Router>
     );

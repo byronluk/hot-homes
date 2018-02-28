@@ -1960,10 +1960,6 @@ var _reduxPromiseMiddleware = __webpack_require__(69);
 
 var _reduxPromiseMiddleware2 = _interopRequireDefault(_reduxPromiseMiddleware);
 
-var _reduxThunk = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"redux-thunk\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
-
 var _rootReducer = __webpack_require__(71);
 
 var _rootReducer2 = _interopRequireDefault(_rootReducer);
@@ -1976,7 +1972,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var middleware = [_reduxThunk2.default, _reduxPromiseMiddleware2.default];
+var middleware = [thunk, _reduxPromiseMiddleware2.default];
 var enhancers = [];
 var composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || _redux.compose;
 

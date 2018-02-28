@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import promiseMiddleware from 'redux-promise-middleware';
-import thunk from 'redux-thunk';
 import reducer from './root-reducer';
 import initialState from './initial-state';
 
