@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import SearchBar from './SearchBar';
 import { onSearchBarChange } from '../../actions/search-bar';
 
-mapStateToProps = ({ searchBar }) => {
+const mapStateToProps = ({ searchBar }) => {
   return { searchBar };
 };
 
-mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     handleInputChange(event) {
       dispatch(onSearchBarChange(event.target.value));
@@ -14,4 +14,4 @@ mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(searchBar);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

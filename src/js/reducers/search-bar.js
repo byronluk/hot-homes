@@ -1,6 +1,6 @@
 import initialState from '../initial-state';
 
-export default searchBarReducer = (state = initialState.searchBar, action) => {
+export default function searchBarReducer(state = initialState.searchBar, action) {
 
   switch (action.type) {
 

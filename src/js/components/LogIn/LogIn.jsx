@@ -1,5 +1,5 @@
 import React from 'react';
-import { Login } from '../actions/sigup';
+// import { Login } from '../actions/sigup';
 
 class LogIn extends React.Component {
     constructor(props) {
@@ -37,7 +37,7 @@ class LogIn extends React.Component {
         const name = e.target.name;
         const value = e.target.value;
     
-        this.props.dispatch(Login({ name: name, value: value }));
+        // this.props.dispatch(Login({ name: name, value: value }));
       }
 
     render() {

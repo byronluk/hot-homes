@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import { toggleLogIn } from '../../actions/home-page';
 import HomePage from './HomePage';
 
-mapStateToProps = ({ homePage }) => {
+const mapStateToProps = ({ homePage }) => {
   return { homePage };
 };
 
-mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     toggleLogIn(value) {
       dispatch(toggleLogIn(value));
@@ -14,4 +14,4 @@ mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStoreToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
