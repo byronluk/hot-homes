@@ -5,19 +5,20 @@ import SearchBar from '../../components/SearchBar';
 import NavigationBar from '../../components/NavigationBar';
 import SignUp from '../../components/SignUp';
 import LogIn from '../../components/LogIn';
+import Footer from '../../components/Footer';
 
 class HomePage extends React.Component {
   render() {
-    const { HomePage } = this.props;
-    
+    const { homePage } = this.props;
+
     return (
       <div>
         <NavigationBar />
         <SearchBar />
 
-        { HomePage.toggleLogIn
-        ? <SignUp />
-        : <LogIn /> }
+        { homePage.toggleLogIn
+          ? <LogIn />
+          : <SignUp /> }
         <Footer />
       </div>
     );
@@ -25,7 +26,7 @@ class HomePage extends React.Component {
 }
 
 HomePage.propTypes = {
-  HomePage: PropTypes.object,
+  homePage: PropTypes.object,
 };
 
 export default HomePage;

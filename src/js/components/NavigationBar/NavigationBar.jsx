@@ -4,6 +4,7 @@ import SearchBar from './SearchBar';
 import {createUser} from '../actions/signup';
 
 export default class Nav extends React.Component {
+<<<<<<< HEAD
   constructor(props) {
     super(props);
     this.handleSignup = this.handleSignup.bind(this);
@@ -18,16 +19,19 @@ handleClick(e) {
   dispatch(Login(input));
 }
   render() {    
+=======
+  render() {
+>>>>>>> dff71cda2e0fdf40a7d629ec1c0acb31470b2531
     return (
       <nav className="Nav">
         <div className="Nav_container">
-            <Link to="/" className="Nav_brand">
-              <img src="logo.svg" className="Nav_logo" />
-            </Link>
+          <Link to="/" className="Nav_brand">
+            <img src="logo.svg" className="Nav_logo" />
+          </Link>
           <div className="Nav_right">
             <ul className="Nav_item-wrapper">
-            <li className="Nav_item">
-               <SearchBar />
+              <li className="Nav_item">
+                <SearchBar />
               </li>
               <li className="Nav_item">
                 <button className="Nav_link" type='button'  onClick={this.handleSignup}>Sign Up</button>
@@ -35,7 +39,7 @@ handleClick(e) {
               <li className="Nav_item">
                 <button className="Nav_link" type='button' onClick={this.handleLogin}>>Log In</button>
               </li>
-              
+
             </ul>
           </div>
         </div>

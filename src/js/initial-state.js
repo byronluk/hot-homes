@@ -7,6 +7,14 @@ const initialState = {
     username: '',
     password: '',
   },
+
+  homePage: {
+    toggleLogIn: false,
+  },
+
+  searchBar: {
+    input: '',
+  },
 };
 
 export default initialState;

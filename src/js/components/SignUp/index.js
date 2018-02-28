@@ -1,4 +1,3 @@
-
 import SignUp from './SignUp';
 import { connect } from 'react-redux';
 
