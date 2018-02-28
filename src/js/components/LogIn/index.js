@@ -2,8 +2,8 @@ import LogIn from './LogIn';
 import { connect } from 'react-redux';
 
 
-function mapStatetoProps(state) {
-    return state.logIn;
+function mapStatetoProps({ logIn }) {
+    return { logIn };
 }
 
 
