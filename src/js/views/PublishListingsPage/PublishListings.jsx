@@ -1,5 +1,5 @@
 import React from 'react';
-import {} from './action';
+import {} from './actions';
 
 class PublishListings extends React.Component {
     constructor(props) {
@@ -9,7 +9,8 @@ class PublishListings extends React.Component {
     render() {
 
         return (
-            
+
         )
     }
 }
+export default PublishListings;

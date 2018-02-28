@@ -1,8 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router';
 import SearchBar from './SearchBar';
+import {createUser} from '../actions/signup';
 
 export default class Nav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSignup = this.handleSignup.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+}
+  handleClick(e) {
+    const {  dispatch } = this.props;
+    dispatch(createUser(input));
+}
+handleClick(e) {
+  const {  dispatch } = this.props;
+  dispatch(Login(input));
+}
   render() {    
     return (
       <nav className="Nav">
@@ -16,10 +30,10 @@ export default class Nav extends React.Component {
                <SearchBar />
               </li>
               <li className="Nav_item">
-                <button className="Nav_link" to="/path1">Sign Up</button>
+                <button className="Nav_link" type='button'  onClick={this.handleSignup}>Sign Up</button>
               </li>
               <li className="Nav_item">
-                <button className="Nav_link" to="/path2">Log In</button>
+                <button className="Nav_link" type='button' onClick={this.handleLogin}>>Log In</button>
               </li>
               
             </ul>
