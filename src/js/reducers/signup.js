@@ -1,4 +1,3 @@
-
 import initialState from '../initial-state';
 
 export default function signupReducer(state = initialState.signup, action) {

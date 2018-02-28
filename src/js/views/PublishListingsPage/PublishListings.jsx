@@ -1,15 +1,18 @@
 import React from 'react';
-import {} from './action';
+import { } from './action';
 
 class PublishListings extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-
-        return (
-            
-        )
-    }
+  render() {
+    return (
+      <div>
+        <h1>Publish Listings</h1>
+      </div>
+    );
+  }
 }
+
+export default PublishListings;

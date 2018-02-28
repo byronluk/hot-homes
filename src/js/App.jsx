@@ -3,13 +3,13 @@ import {
   HashRouter as Router,
   Route
 } from 'react-router-dom';
-import Home from './view/HomePage';
-import Listings from './view/ListingsPage';
-import ListingsDetail from './view/ListingsDetailPage';
-import LandlordDashboard from './view/LandlordDashboardPage';
-import Profile from './view/ProfilePage';
-import PublishListings from './view/PublishListingsPage';
-import RentListings from './view/RentListingsPage';
+import Home from './views/HomePage';
+import Listings from './views/ListingsPage';
+import ListingsDetail from './views/ListingsDetailPage';
+import LandlordDashboard from './views/LandlordDashboardPage';
+import Profile from './views/ProfilePage';
+import PublishListings from './views/PublishListingsPage';
+import RentListings from './views/RentListingsPage';
 
 export default class App extends React.Component {
   render() {
