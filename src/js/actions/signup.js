@@ -2,7 +2,7 @@ export function createUser (action) {
 
     return {
         type: 'CREATE_USER',
-        payload: action,
+        payload: axios.post('/api/users/', action),
     }
 
 };

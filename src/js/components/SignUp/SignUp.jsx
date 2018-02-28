@@ -13,9 +13,7 @@ class SignUp extends React.Component {
     //don't do any silly redirects
     e.preventDefault();
 
-    //data accessible from store
-    //need to connect it to figure out exactly where this is
-    let firstName, lastName, username, email, password;
+    const { firstName, lastName, username, email, password, isLandlord } = this.props;
 
     if (!firstName.match(/^[a-z]+$/i) || !lastName.match(/^[a-z]+$/i)) {
       console.log('name validation failed');
@@ -31,21 +29,47 @@ class SignUp extends React.Component {
       console.log('password validation failed');
       return false;
     }
-    //need to figure this out
-    if (!isAvailable(username)) {
-      console.log('username is already taken');
-      return false;
-    }
 
-    //if all of those pass, go ahead and create a new user
-    this.props.dispatch(createUser({
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      username: username,
-      password: password,
-    }))
 
+    this.isAvailable(username).then(available => {
+
+      if (!available) {
+        console.log('username is already taken');
+        return false;
+      }
+
+      //if all of those pass, go ahead and create a new user
+      this.props.dispatch(createUser({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        username: username,
+        password: password,
+        isLandlord: isLandlord,
+      }))
+    });
+
+
+
+
+
+  }
+
+  isAvailable(name) {
+
+    return axios.get('/api/users/')
+      .then((data) => {
+        data.forEach(entry => {
+          if (entry.username == name) {
+            return false;
+          }
+        });
+        return true;
+      })
+      .catch(err => {
+        console.log('Server error');
+        return false;
+      });
   }
 
   updateForm(e) {
@@ -60,11 +84,14 @@ class SignUp extends React.Component {
       <div>
         <form>
 
-          <input type='text' onChange={this.updateForm} name='first-name' placeholder='First Name' />
-          <input type='text' onChange={this.updateForm} name='last-name' placeholder='Last Name' />
+          <input type='text' onChange={this.updateForm} name='firstName' placeholder='First Name' />
+          <input type='text' onChange={this.updateForm} name='lastName' placeholder='Last Name' />
           <input type='text' onChange={this.updateForm} name='username' placeholder='Username' />
           <input type='text' onChange={this.updateForm} name='email' placeholder='Email' />
           <input type='password' onChange={this.updateForm} name='password' placeholder='Password' />
+
+          <p>Are you planning on listing your own properties?</p>
+          <input type='checkbox' onChange={this.updateForm} name='isLandlord' />
 
           <button type='submit' onClick={this.validateAndSubmit}>Submit</button>
         </form>

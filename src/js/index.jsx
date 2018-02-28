@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, ReactDOM } from 'react-dom';
 import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import promiseMiddleware from 'redux-promise-middleware';
@@ -16,11 +16,11 @@ const store = createStore(
   initialState,
   composeEnhancers(
     applyMiddleware(...middleware),
-    ...enchancers,
+    ...enhancers,
   )
 );
 
-ReactDOM.render(
+render(
   <Provider store={store}>
     <App />
   </Provider>,
