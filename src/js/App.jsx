@@ -6,11 +6,7 @@ import {
 import Home from './views/HomePage';
 import Listings from './views/ListingsPage';
 import ListingsDetail from './views/ListingsDetailPage';
-<<<<<<< HEAD
-//import LandlordDashboard from './views/LandlordDashboardPage';
-=======
 import LandlordDashboard from './views/LandlordDashboardPage';
->>>>>>> dff71cda2e0fdf40a7d629ec1c0acb31470b2531
 import Profile from './views/ProfilePage';
 import PublishListings from './views/PublishListingsPage';
 import RentListings from './views/RentListingsPage';

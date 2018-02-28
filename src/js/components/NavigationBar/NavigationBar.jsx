@@ -1,23 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router';
 import SearchBar from './SearchBar';
-import {createUser} from '../actions/signup';
+import { createUser } from '../actions/signup';
 
 export default class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
     this.handleSignup = this.handleSignup.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
-}
+  }
   handleClick(e) {
-    const {  dispatch } = this.props;
+    const { dispatch } = this.props;
     dispatch(createUser(input));
+<<<<<<< HEAD
 }
 handleClick(e) {
   const {  dispatch } = this.props;
   dispatch(Login(input));
 }
   render() {    
+=======
+  }
+  handleClick(e) {
+    const { dispatch } = this.props;
+    dispatch(Login(input));
+  }
+  render() {
+>>>>>>> 882fee81e620606ba348fb2b73f3e1bf19d8cd90
     return (
       <nav className="Nav">
         <div className="Nav_container">
@@ -30,7 +39,7 @@ handleClick(e) {
                 <SearchBar />
               </li>
               <li className="Nav_item">
-                <button className="Nav_link" type='button'  onClick={this.handleSignup}>Sign Up</button>
+                <button className="Nav_link" type='button' onClick={this.handleSignup}>Sign Up</button>
               </li>
               <li className="Nav_item">
                 <button className="Nav_link" type='button' onClick={this.handleLogin}>>Log In</button>
