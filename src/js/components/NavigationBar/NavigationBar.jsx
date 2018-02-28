@@ -1,22 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar';
+import SignUp from '../../components/SignUp';
+import LogIn from '../../components/LogIn';
 
-export default class NavigationBar extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.handleSignup = this.handleSignup.bind(this);
-  //   this.handleLogin = this.handleLogin.bind(this);
-  // }
-  // handleClick(e) {
-  //   const { dispatch } = this.props;
-  //   dispatch(createUser(input));
-  // }
-  // handleClick(e) {
-  //   const { dispatch } = this.props;
-  //   dispatch(Login(input));
-  // }
+class NavigationBar extends React.Component {
+  
   render() {
+    const { navBar, toggleLogIn, toggleSignUp } = this.props;
+
     return (
       <nav className="Nav">
         <div className="Nav_container">
@@ -24,21 +16,21 @@ export default class NavigationBar extends React.Component {
             <p>Hot Homes</p>
           </Link>
           <div className="Nav_right">
-            <ul className="Nav_item-wrapper">
-              <li className="Nav_item">
-                <SearchBar />
-              </li>
-              <li className="Nav_item">
-                {/* <button className="Nav_link" type='button' onClick={this.handleSignup}>Sign Up</button> */}
-              </li>
-              <li className="Nav_item">
-                {/* <button className="Nav_link" type='button' onClick={this.handleLogin}>>Log In</button> */}
-              </li>
+            <SearchBar />
+            <div>
+                <a href='#' onClick={() => toggleLogIn(false)}>Log In</a>
+                <LogIn />
+              </div>
+             <div>
+                <a href='#' onClick={() => toggleSignUp(false)}>Sign Up</a>
+                <SignUp />
+              </div>
 
-            </ul>
           </div>
         </div>
       </nav>
     );
   }
 }
+
+export default NavigationBar;

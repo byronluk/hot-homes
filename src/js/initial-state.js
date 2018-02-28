@@ -19,6 +19,11 @@ const initialState = {
   logIn: {
     email: '',
     password:''
+  },
+
+  navBar: {
+    toggleLogIn: true,
+    toggleSingUp: true,
   }
 };
 
