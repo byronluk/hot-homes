@@ -5,8 +5,9 @@ import { Provider } from 'react-redux';
 import promiseMiddleware from 'redux-promise-middleware';
 import reducer from './root-reducer';
 import initialState from './initial-state';
+import App from './App';
 
-const middleware = [ thunk, promiseMiddleware ];
+const middleware = [ promiseMiddleware ];
 const enhancers = [];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
