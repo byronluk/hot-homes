@@ -1,10 +1,9 @@
 import initialState from '../initial-state';
 
-export default function signupReducer(state = initialState.signup, action) {
-
+export default function signUpReducer(state = initialState.signUp, action) {
   switch (action.type) {
 
-    case 'UPDATE_SIGNUP_FORM': {
+    case 'UPDATE_SIGN_UP_FORM': {
       const { name, value } = action.payload;
       return {
         ...state,

@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import signupReducer from './reducers/signup';
+import signUpReducer from './reducers/sign-up';
 import homePageReducer from './reducers/home-page';
 import searchBarReducer from './reducers/search-bar';
 
 const reducer = combineReducers({
-    signup: signupReducer,
+    signUp: signUpReducer,
     homePage: homePageReducer,
     searchBar: searchBarReducer,
 });

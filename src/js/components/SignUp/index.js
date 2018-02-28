@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 
 function mapStatetoProps(state) {
-    return state.signup;
+    return state.signUp;
 }
 
 

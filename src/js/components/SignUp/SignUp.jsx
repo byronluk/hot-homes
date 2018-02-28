@@ -1,5 +1,5 @@
 import React from 'react';
-import { createUser, updateSignUp } from '../../actions/signup';
+import { createUser, updateSignUp } from '../../actions/sign-up';
 
 class SignUp extends React.Component {
 
@@ -11,9 +11,9 @@ class SignUp extends React.Component {
 
   validateAndSubmit(e) {
     //don't do any silly redirects
+    const { firstName, lastName, username, email, password, isLandlord } = this.props;
     e.preventDefault();
 
-    const { firstName, lastName, username, email, password, isLandlord } = this.props;
 
     if (!firstName.match(/^[a-z]+$/i) || !lastName.match(/^[a-z]+$/i)) {
       console.log('name validation failed');
@@ -79,15 +79,47 @@ class SignUp extends React.Component {
   }
 
   render() {
+    const { firstName, lastName, username, email, password } = this.props;
+    console.log(firstName);
     return (
       <div>
         <form>
 
-          <input type='text' onChange={this.updateForm} name='firstName' placeholder='First Name' />
-          <input type='text' onChange={this.updateForm} name='lastName' placeholder='Last Name' />
-          <input type='text' onChange={this.updateForm} name='username' placeholder='Username' />
-          <input type='text' onChange={this.updateForm} name='email' placeholder='Email' />
-          <input type='password' onChange={this.updateForm} name='password' placeholder='Password' />
+          <input
+            value={ firstName }
+            type='text'
+            onChange={this.updateForm}
+            name='firstName'
+            placeholder='First Name'
+          />
+          <input
+            value={ lastName }          
+            type='text'
+            onChange={this.updateForm}
+            name='lastName'
+            placeholder='Last Name'
+          />
+          <input
+            value={ username }          
+            type='text'
+            onChange={this.updateForm}
+            name='username'
+            placeholder='Username'
+          />
+          <input
+            value={ email }            
+            type='text'
+            onChange={this.updateForm}
+            name='email'
+            placeholder='Email'
+          />
+          <input
+            value={ password }                      
+            type='password'
+            onChange={this.updateForm}
+            name='password'
+            placeholder='Password' 
+          />
 
           <p>Are you planning on listing your own properties?</p>
           <input type='checkbox' onChange={this.updateForm} name='isLandlord' />
