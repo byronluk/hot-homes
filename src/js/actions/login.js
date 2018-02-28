@@ -1,8 +1,8 @@
-export function Login (action) {
+export function Login (input) {
 
     return {
         type: 'USER-LOGIN',
-        payload: action,
+        payload: axios.get('/api/users/', action)
     }
 
 };

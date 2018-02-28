@@ -3,8 +3,7 @@ import { Link } from 'react-router';
 import SearchBar from './SearchBar';
 import {createUser} from '../actions/signup';
 
-export default class Nav extends React.Component {
-<<<<<<< HEAD
+export default class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
     this.handleSignup = this.handleSignup.bind(this);
@@ -19,9 +18,6 @@ handleClick(e) {
   dispatch(Login(input));
 }
   render() {    
-=======
-  render() {
->>>>>>> dff71cda2e0fdf40a7d629ec1c0acb31470b2531
     return (
       <nav className="Nav">
         <div className="Nav_container">

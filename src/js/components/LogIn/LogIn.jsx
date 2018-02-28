@@ -11,11 +11,7 @@ class LogIn extends React.Component {
       validateAndSubmit(e) {
         e.preventDefault();
         let email, password;
-    
-        if (!firstName.match(/^[a-z]+$/i) || !lastName.match(/^[a-z]+$/i)) {
-          console.log('name validation failed');
-          return false;
-        }
+
         //literally black magic
         if (!email.match(/^[^@]+@[^\.]+(\.[a-z0-9]+)*\.[a-z]+/i)) {
           console.log('email validation failed');
