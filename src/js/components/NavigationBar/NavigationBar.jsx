@@ -21,7 +21,7 @@ export default class NavigationBar extends React.Component {
       <nav className="Nav">
         <div className="Nav_container">
           <Link to="/" className="Nav_brand">
-            <img src="logo.svg" className="Nav_logo" />
+            <p>Hot Homes</p>
           </Link>
           <div className="Nav_right">
             <ul className="Nav_item-wrapper">
