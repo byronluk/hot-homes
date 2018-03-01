@@ -35,7 +35,7 @@ isMatching(data, name) {
   console.log(data);
   data.forEach( item => {});
     (entry => {
-      if (entry.email == email && entery.password == password ) {
+      if (entry.email == email && entry.password == password ) {
         return true;
       }
     });
