@@ -24,7 +24,11 @@ class LogIn extends React.Component {
       return false;
     }
      axios.get('./api/users').then( data => {
+<<<<<<< HEAD
        if (this.isMatching (data.data, email, password)) {
+=======
+       if (email.match(data.email)) {
+>>>>>>> change in navigation and login files
          dispatch(logIn({ email: email, password: password }))
        } else {
          console.log('Invalid email or password')
