@@ -16,7 +16,9 @@ function logInReducer(state = initialState.logIn, action) {
       return {
         ...state,
         [[name]]: value,
-      };
+        auth: { role: 'user', status: 'login'}
+      }
+
     }
 
     case 'USER_LOGIN_REJECTED': {
