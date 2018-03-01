@@ -18,27 +18,27 @@ class RentListings extends React.Component {
         this.props.dispatch(updateReservationDates({ name: name, value: value }));
 
     }
-    
+
     sendDates(e) {
 
         const { startDate, endDate, user, property } = this.props;
         axios.get('/api/reservations').then(response => {
-            
+
             response.data.forEach(reservation => {
                 if (reservation.userId == user && reservation.propertyID == property &&
-                     ((startDate > reservation.startDate && startDate < reservation.endDate) || 
-                ( endDate < reservation.endDate && endDate > reservation.startDate))) {
-                    console.log('Reservation start and end dates overlap with another reservation');
+                    ((startDate > reservation.startDate && startDate < reservation.endDate) ||
+                        (endDate < reservation.endDate && endDate > reservation.startDate))) {
+                    console.log('Reservation start and end dates overlap with another reservation at this location');
                     return false;
                 }
             })
-            
+
             this.props.dispatch(updateDatabaseReservation({
-            user: user,
-            property: property,
-            startDate: startDate,
-            endDate: endDate,
-        }))
+                user: user,
+                property: property,
+                startDate: startDate,
+                endDate: endDate,
+            }))
         });
     }
 
@@ -48,8 +48,8 @@ class RentListings extends React.Component {
 
                 <form>
 
-                    <input type='date' onChange={this.updateDates} name='startDate' />
-                    <input type='date' onChange={this.updateDates} name='endDate' />
+                    <input type='date' value={this.props.startDate} onChange={this.updateDates} name='startDate' />
+                    <input type='date' value={this.props.endDate} onChange={this.updateDates} name='endDate' />
 
                     <button type='submit' onClick={this.sendDates} />
 
