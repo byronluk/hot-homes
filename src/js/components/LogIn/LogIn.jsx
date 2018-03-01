@@ -1,6 +1,5 @@
 import React from 'react';
 import { updateLogIn } from '../../actions/log-in';
-import PropTypes from 'prop-types';
 
 class LogIn extends React.Component {
   constructor(props) {
@@ -13,7 +12,7 @@ class LogIn extends React.Component {
     const { email, password } = this.props.login;
     e.preventDefault();
 
-    // literally black magic
+    //literally black magic
     if (!email.match(/^[^@]+@[^\.]+(\.[a-z0-9]+)*\.[a-z]+/i)) {
       console.log('email validation failed');
       return false;
@@ -24,11 +23,7 @@ class LogIn extends React.Component {
       return false;
     }
      axios.get('./api/users').then( data => {
-<<<<<<< HEAD
        if (this.isMatching (data.data, email, password)) {
-=======
-       if (email.match(data.email)) {
->>>>>>> change in navigation and login files
          dispatch(logIn({ email: email, password: password }))
        } else {
          console.log('Invalid email or password')
@@ -50,7 +45,7 @@ isMatching(data, name) {
     const { dispatch } = this.props;
     const name = e.target.name;
     const value = e.target.value;
-
+    
     dispatch(updateLogIn({ name: name, value: value }));
   }
 
@@ -62,14 +57,12 @@ isMatching(data, name) {
           <input
             type='text'
             onChange={this.updateForm}
-            value={ logIn.email }
             name='email'
             placeholder='Email' />
 
           <input
             type='password'
             onChange={this.updateForm}
-            value={ logIn.password }
             name='password'
             placeholder='Password' />
 
@@ -83,13 +76,8 @@ isMatching(data, name) {
         </form>
         <p>Forgot your password?</p>
       </div>
-    );
+    )
   }
 }
-
-LogIn.propTypes = {
-  logIn: PropTypes.object,
-  dispatch: PropTypes.func,
-};
 
 export default LogIn;
