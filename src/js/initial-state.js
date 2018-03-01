@@ -18,6 +18,7 @@ const initialState = {
   },
 
   logIn: {
+    auth: { role: 'anonymous', status: 'logout'},
     email: '',
     password: '',
   },

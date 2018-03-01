@@ -17,6 +17,7 @@ export default function logInReducer(state = initialState.logIn, action) {
       return {
         ...state,
         [[name]]: value,
+        auth: { role: 'user', status: 'login'}
       }
 
     }
