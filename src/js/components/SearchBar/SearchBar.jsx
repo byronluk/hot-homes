@@ -1,14 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import PlacesAutocomplete from 'react-places-autocomplete';
 
 class SearchBar extends React.Component {
   render() {
-    const { searchBar, handleInputChange } = this.props;
-
+    const { searchBar, handleInputChange, handleLocationSelect } = this.props;
+    { /*
+      props to be passed down to input element in PlacesAutocomplete component
+    */ }
+    const inputProps = {
+      value: searchBar.input,
+      onChange: handleInputChange,
+      placeholder: 'search here',
+    };
     return (
       <form>
-        <input type="text" value={ searchBar.input } onChange={ handleInputChange } placeholder="search bar" />
-        <button>Search</button>
+        <PlacesAutocomplete
+          id="search-bar"
+          type="text"
+          inputProps={ inputProps }
+          onSelect={ handleLocationSelect }
+        />
       </form>
     );
   }
@@ -17,6 +29,7 @@ class SearchBar extends React.Component {
 SearchBar.propTypes = {
   searchBar: PropTypes.object,
   handleInputChange: PropTypes.func,
-}
+  handleLocationSelect: PropTypes.func,
+};
 
 export default SearchBar;

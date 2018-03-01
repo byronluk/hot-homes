@@ -14,7 +14,6 @@ export default function signUpReducer(state = initialState.signUp, action) {
     case 'CREATE_USER_FULFILLED': {
         console.log('User successfully created');
         return state;
-
     }
 
     case 'CREATE_USER_REJECTED': {

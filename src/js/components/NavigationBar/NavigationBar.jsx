@@ -15,6 +15,9 @@ class NavigationBar extends React.Component {
           <Link to="/" className="Nav_brand">
             <p>Hot Homes</p>
           </Link>
+          <Link to="/listings" className="Nav_brand">
+            <p>Listings</p>
+          </Link>
           <div className="Nav_right">
             <SearchBar />
             <div>
