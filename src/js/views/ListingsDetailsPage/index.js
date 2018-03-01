@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 
 
 
-function mapStateToProps(store) {
-    return {
-        ...store.currentSession,
-    }
-}
+// function mapStateToProps(store) {
+//     return {
+//         ...store.currentSession,
+//     }
+// }
 
-export default connect(mapStateToProps)(ListingDetails);
+//export default connect(mapStateToProps)(ListingDetails);
+export default ListingDetails;

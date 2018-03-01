@@ -18,9 +18,9 @@ export default class App extends React.Component {
       <Router history={ history }>
         <div className='container'>
           <Route exact path='/' component={Home} />
-          <Route path='/list' component={Listings} />
-          <Route path='/list/:id' component={ListingsDetail} />
-          <Route path='/list/:id/:book' component={RentListings} />
+          <Route path='/listings' component={Listings} />
+          <Route path='/listings/:id' component={ListingsDetail} />
+          <Route path='/listings/:id/:book' component={RentListings} />
           {/* <Route path='/user' component={Profile} /> */}
           <Route path='/user/publish' component={PublishListings} />
         </div>

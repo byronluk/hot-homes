@@ -16,7 +16,9 @@ export default class ListingDetails extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`/api/properties/${this.props.currentProperty}`)
+        console.log(this.props.location);
+        const id = this.props.location.pathname.substr(10);
+        axios.get(`/api/properties/${id}`)
             .then(response => {
                 this.setState({ ...response.data, error: null });
             })
