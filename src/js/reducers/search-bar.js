@@ -1,14 +1,19 @@
 import initialState from '../initial-state';
 
-export default function searchBarReducer(state = initialState.searchBar, action) {
-
+function searchBarReducer(state = initialState.searchBar, action) {
   switch (action.type) {
 
     case 'SEARCH_BAR_CHANGE': {
       return {
         ...state,
-        input: action.input
+        input: action.input,
       };
+    }
+
+    case 'SEARCH_PROPERTIES': {
+      const { results } = action;
+      console.log(results);
+      return state;
     }
 
     default: {
@@ -16,3 +21,5 @@ export default function searchBarReducer(state = initialState.searchBar, action)
     }
   }
 }
+
+export default searchBarReducer;

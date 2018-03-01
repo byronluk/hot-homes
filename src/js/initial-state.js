@@ -14,12 +14,13 @@ const initialState = {
 
   searchBar: {
     input: '',
+    results: [],
   },
 
   logIn: {
     email: '',
-    password:''
-  }
+    password: '',
+  },
 };
 
 export default initialState;
