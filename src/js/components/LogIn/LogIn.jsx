@@ -9,8 +9,8 @@ class LogIn extends React.Component {
   }
 
   validateAndSubmit(e) {
+    const { email, password } = this.props.login;
     e.preventDefault();
-    let email, password;
 
     //literally black magic
     if (!email.match(/^[^@]+@[^\.]+(\.[a-z0-9]+)*\.[a-z]+/i)) {
@@ -23,7 +23,7 @@ class LogIn extends React.Component {
       return false;
     }
      axios.get('./api/users').then( data => {
-       if (email.match(data.email)) {
+       if (this.isMatching (data.data, email, password)) {
          dispatch(logIn({ email: email, password: password }))
        } else {
          console.log('Invalid email or password')
@@ -31,7 +31,16 @@ class LogIn extends React.Component {
        
      })
   }
-
+isMatching(data, name) {
+  console.log(data);
+  data.forEach( item => {});
+    (entry => {
+      if (entry.email == email && entery.password == password ) {
+        return true;
+      }
+    });
+    return false;
+}
   updateForm(e) {
     const { dispatch } = this.props;
     const name = e.target.name;
