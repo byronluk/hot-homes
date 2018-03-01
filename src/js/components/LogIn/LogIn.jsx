@@ -22,13 +22,8 @@ class LogIn extends React.Component {
       console.log('password validation failed');
       return false;
     }
-
-    //have to figure it out later....
-    if (!email.match() || !password.match()) {
-      console.log('username or password is not right');
-      return false;
-    }
   }
+
   updateForm(e) {
     const { dispatch } = this.props;
     const name = e.target.name;
