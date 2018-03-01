@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { toggleLogIn } from '../../actions/navigation-bar';
+import { toggleHidden } from '../../actions/navigation-bar';
 import NavigationBar from './NavigationBar';
 
 const mapStateToProps = ({ navBar }) => {
@@ -8,8 +8,8 @@ const mapStateToProps = ({ navBar }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    toggleLogIn(value) {
-      dispatch(toggleLogIn(value));
+    toggleHidden(value) {
+      dispatch(toggleHidden(value));
     }
   }
 }

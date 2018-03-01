@@ -22,6 +22,14 @@ class LogIn extends React.Component {
       console.log('password validation failed');
       return false;
     }
+     axios.get('./api/users').then( data => {
+       if (email.match(data.email)) {
+         dispatch(logIn({ email: email, password: password }))
+       } else {
+         console.log('Invalid email or password')
+       }
+       
+     })
   }
 
   updateForm(e) {
