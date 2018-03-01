@@ -1,7 +1,5 @@
 import ListingDetails from './ListingDetails';
-import { connect } from 'react-redux';
-
-
+// import { connect } from 'react-redux';
 
 // function mapStateToProps(store) {
 //     return {
@@ -9,5 +7,5 @@ import { connect } from 'react-redux';
 //     }
 // }
 
-//export default connect(mapStateToProps)(ListingDetails);
+// export default connect(mapStateToProps)(ListingDetails);
 export default ListingDetails;

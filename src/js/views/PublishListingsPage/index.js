@@ -1,9 +1,9 @@
 import PublishListings from './PublishListings';
 import { connect } from 'react-redux';
 
-function mapStatetoProps( {publishListings}) {
-    return {
-        publishListings
-    }
+function mapStateToProps({ publishListings }) {
+  return {
+    publishListings,
+  };
 }
-export default connect(mapStoreToProps)(PublishListings);
+export default connect(mapStateToProps)(PublishListings);
