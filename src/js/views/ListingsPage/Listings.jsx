@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import SearchBar from '../../components/SearchBar';
 
 class Listings extends React.Component {
   render() {
@@ -39,7 +38,7 @@ class Listings extends React.Component {
         </div>
       </div>
 
-    )
+    );
   }
 }
 
