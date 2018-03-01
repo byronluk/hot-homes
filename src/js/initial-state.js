@@ -25,10 +25,15 @@ const initialState = {
     startDate: '',
     endDate: '',
   },
-  
+
   navBar: {
     toggleLogIn: true,
-    toggleSingUp: true,
+    toggleSignUp: true,
+  },
+
+  currentSession: {
+    currentUser: '',
+    currentProperty: '',
   }
 };
 
