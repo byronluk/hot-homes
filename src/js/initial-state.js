@@ -6,32 +6,30 @@ const initialState = {
     username: '',
     password: '',
   },
-
+  logIn: {
+    emailOrUsername: '',
+    password: '',
+  },
+  auth: {
+    status: 'ANONYMOUS',
+    username: '',
+    email: '',
+  },
   homePage: {
     toggleLogIn: false,
   },
-
   searchBar: {
     input: '',
     results: [],
   },
-
-  logIn: {
-    auth: { role: 'anonymous', status: 'logout'},
-    email: '',
-    password: '',
-  },
-
   rentListings: {
     startDate: '',
     endDate: '',
   },
-
   navBar: {
     toggleSignUp: false,
     toggleLogIn: false,
   },
-
   currentSession: {
     currentUser: '',
     currentProperty: '',
