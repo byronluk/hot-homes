@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import NavigationBar from '../../components/NavigationBar';
 
 class Listings extends React.Component {
   render() {
