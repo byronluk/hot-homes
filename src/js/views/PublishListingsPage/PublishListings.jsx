@@ -1,9 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
-import {} from './actions';
-=======
 import { } from './action';
->>>>>>> dff71cda2e0fdf40a7d629ec1c0acb31470b2531
 
 class PublishListings extends React.Component {
   constructor(props) {
@@ -19,12 +15,4 @@ class PublishListings extends React.Component {
   }
 }
 
-<<<<<<< HEAD
-        return (
-
-        )
-    }
-}
-=======
->>>>>>> dff71cda2e0fdf40a7d629ec1c0acb31470b2531
 export default PublishListings;

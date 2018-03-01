@@ -24,6 +24,11 @@ const initialState = {
   rentListings: {
     startDate: '',
     endDate: '',
+  },
+  
+  navBar: {
+    toggleLogIn: true,
+    toggleSingUp: true,
   }
 };
 
