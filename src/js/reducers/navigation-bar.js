@@ -4,20 +4,12 @@ export default function navBarReducer(state = initialState.navBar, action) {
 
   switch (action.type) {
 
-    case 'TOGGLE_LOG_IN': {
+    case 'TOGGLE_HIDDEN': {
       return {
         ...state,
-        toggleLogIn: action.toggleLogIn,
+        toggleHidden: action.toggleHidden,
       }
     }
-
-    case 'TOGGLE_SIGN_UP': {
-        return {
-          ...state,
-          toggleSignUp: action.toggleSignUp,
-        }
-      }
-  
 
     default: {
       return state;
