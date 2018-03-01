@@ -21,21 +21,21 @@ class RentListings extends React.Component {
     
     sendDates(e) {
 
-        const { startDate, endDate } = this.props;
+        const { startDate, endDate, user, property } = this.props;
         axios.get('/api/reservations').then(response => {
             
             response.data.forEach(reservation => {
-                if ((startDate > reservation.startDate && startDate < reservation.endDate) || 
-                ( endDate < reservation.endDate && endDate > reservation.startDate)) {
+                if (reservation.userId == user && reservation.propertyID == property &&
+                     ((startDate > reservation.startDate && startDate < reservation.endDate) || 
+                ( endDate < reservation.endDate && endDate > reservation.startDate))) {
                     console.log('Reservation start and end dates overlap with another reservation');
                     return false;
                 }
             })
             
             this.props.dispatch(updateDatabaseReservation({
-            //fill these in
-            user: '',
-            property: '',
+            user: user,
+            property: property,
             startDate: startDate,
             endDate: endDate,
         }))

@@ -5,6 +5,7 @@ import homePageReducer from './reducers/home-page';
 import searchBarReducer from './reducers/search-bar';
 import rentListingReducer from './reducers/rent-listings';
 import navBarReducer from './reducers/navigation-bar';
+import currentSessionReducer from './reducers/current-session';
 
 const reducer = combineReducers({
     signUp: signUpReducer,
@@ -12,7 +13,8 @@ const reducer = combineReducers({
     homePage: homePageReducer,
     searchBar: searchBarReducer,
     rentListings: rentListingReducer,
-    navBar: navBarReducer
+    navBar: navBarReducer,
+    currentSession: currentSessionReducer,
 });
 
 export default reducer;
