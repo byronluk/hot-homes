@@ -1,14 +1,20 @@
 import initialState from '../initial-state';
 
-export default function navBarReducer(state = initialState.navBar, action) {
-
+function navBarReducer(state = initialState.navBar, action) {
   switch (action.type) {
 
     case 'TOGGLE_HIDDEN': {
       return {
         ...state,
-        toggleHidden: action.toggleHidden,
-      }
+        toggleLogIn: action.toggleLogIn,
+      };
+    }
+
+    case 'TOGGLE_SIGN_UP': {
+      return {
+        ...state,
+        toggleSignUp: action.toggleSignUp,
+      };
     }
 
     default: {
@@ -16,3 +22,6 @@ export default function navBarReducer(state = initialState.navBar, action) {
     }
   }
 }
+
+export default navBarReducer;
+

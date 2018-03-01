@@ -15,18 +15,22 @@ class HomePage extends React.Component {
       <div>
         <NavigationBar />
         <SearchBar />
-        
-        { homePage.toggleLogIn
-          ? <div>
-              <h2>Log In</h2>
-              <a href='#' onClick={ () => toggleLogIn(false) }>or click here to sign up</a>
-              <LogIn />
-            </div>
-          : <div>
-              <h2>Sign Up</h2>
-              <a href='#' onClick={ () => toggleLogIn(true) }>or click here to log in</a>
-              <SignUp />
-            </div> }
+
+        {homePage.toggleLogIn ?
+           <div>
+            <h2>Log In</h2>
+             <a href='#' onClick={() => toggleLogIn(false)}>
+              or click here to sign up
+            </a>
+            <LogIn />
+          </div> :
+          <div>
+            <h2>Sign Up</h2>
+            <a href='#' onClick={() => toggleLogIn(true)}>
+              or click here to log in
+            </a>
+            <SignUp />
+          </div>}
         <Footer />
       </div>
     );
@@ -35,6 +39,7 @@ class HomePage extends React.Component {
 
 HomePage.propTypes = {
   homePage: PropTypes.object,
+  toggleLogIn: PropTypes.bool,
 };
 
 export default HomePage;

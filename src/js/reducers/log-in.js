@@ -1,7 +1,6 @@
 import initialState from '../initial-state';
 
-export default function logInReducer(state = initialState.logIn, action) {
-
+function logInReducer(state = initialState.logIn, action) {
   switch (action.type) {
 
     case 'UPDATE_LOG_IN_FORM': {
@@ -9,7 +8,7 @@ export default function logInReducer(state = initialState.logIn, action) {
       return {
         ...state,
         [[name]]: value,
-      }
+      };
     }
 
     case 'USER_LOGIN_FULFILLED': {
@@ -17,8 +16,7 @@ export default function logInReducer(state = initialState.logIn, action) {
       return {
         ...state,
         [[name]]: value,
-      }
-
+      };
     }
 
     case 'USER_LOGIN_REJECTED': {
@@ -31,3 +29,5 @@ export default function logInReducer(state = initialState.logIn, action) {
     }
   }
 }
+
+export default logInReducer;
