@@ -21,6 +21,7 @@ const initialState = {
     email: '',
     password: '',
   },
+<<<<<<< HEAD
 
   rentListings: {
     startDate: '',
@@ -36,6 +37,8 @@ const initialState = {
     currentUser: '',
     currentProperty: '',
   },
+=======
+>>>>>>> c871419cbe2879051881adfe59165fc13e948a1c
 };
 
 export default initialState;
