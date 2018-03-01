@@ -3,11 +3,11 @@ import { Router, Route } from 'react-router-dom';
 import history from './history';
 
 import Home from './views/HomePage';
-import Listings from './views/ListingsPage/Listings';
-import ListingsDetail from './views/ListingsDetailsPage';
-// import Profile from './views/ProfilePage';
-import PublishListings from './views/PublishListingsPage';
+import Listings from './views/ListingsPage';
 import RentListings from './views/RentListingsPage';
+import ListingsDetail from './views/ListingsDetailPage';
+import PublishListings from './views/PublishListingsPage';
+// import Profile from './views/ProfilePage';
 
 export default class App extends React.Component {
   render() {

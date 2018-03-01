@@ -10,7 +10,6 @@ import Footer from '../../components/Footer/Footer';
 class HomePage extends React.Component {
   render() {
     const { homePage, toggleLogIn } = this.props;
-
     return (
       <div>
         <NavigationBar />
