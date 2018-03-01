@@ -3,7 +3,7 @@ import { Router, Route } from 'react-router-dom';
 import history from './history';
 
 import Home from './views/HomePage';
-import Listings from './views/ListingsPage/Listings';
+import Listings from './views/ListingsPage';
 import RentListings from './views/RentListingsPage';
 // import ListingsDetail from './views/ListingsDetailPage';
 // import LandlordDashboard from './views/LandlordDashboardPage';
@@ -19,7 +19,7 @@ export default class App extends React.Component {
           <Route path='/listings' component={Listings} />
           <Route path='/list/:id/:book' component={RentListings} />
           {/*
-            <Route path='/list/:id' component={ListingsDetail} />
+            <Route path='/listing/:id' component={ListingsDetail} />
             <Route path='/user' component={Profile} />
             <Route path='/user/publish' component={PublishListing} />
           */}
