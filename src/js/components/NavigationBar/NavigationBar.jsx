@@ -5,21 +5,8 @@ import SignUp from '../../components/SignUp';
 import LogIn from '../../components/LogIn';
 
 class NavigationBar extends React.Component {
-  constructor(){
-    super()
-    this.state = {
-      isHidden: true
-    }
-  }
-
-  toggleHidden() {
-    this.setState({
-      isHidden: !this.state.isHidden
-    })
-  }
-  
   render() {
-
+    const { navBar, toggleHidden } = this.props;
     return (
       <nav className="Nav">
         <div className="Nav_container">
@@ -32,13 +19,13 @@ class NavigationBar extends React.Component {
           <div className="Nav_right">
             <SearchBar />
             <div>
-                <button onClick={this.toggleHidden.bind(this)} >Log In </button>
-                {!this.state.isHidden && <LogIn />}              
-              </div>
-             <div>
-             <button onClick={this.toggleHidden.bind(this)} >Sign Up</button>
-                {!this.state.isHidden && <SignUp />}  
-              </div>
+              <button name="toggleLogIn" value="true" onClick={ toggleHidden } >Log In </button>
+              { navBar.toggleLogIn && <LogIn />}
+            </div>
+            <div>
+              <button name="toggleSignUp" value="true" onClick={ toggleHidden } >Sign Up</button>
+              { navBar.toggleSignUp && <SignUp />}
+            </div>
 
           </div>
         </div>

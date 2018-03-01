@@ -10,8 +10,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     toggleLogIn(value) {
       dispatch(toggleLogIn(value));
-    }
-  }
-}
+    },
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

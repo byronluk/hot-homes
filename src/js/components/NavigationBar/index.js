@@ -8,10 +8,10 @@ const mapStateToProps = ({ navBar }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    toggleHidden(value) {
-      dispatch(toggleHidden(value));
-    }
-  }
-}
+    toggleHidden(event) {
+      dispatch(toggleHidden(event.target.name));
+    },
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);
