@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import NavigationBar from '../../components/NavigationBar';
+import SearchBar from '../../components/SearchBar';
 
 class Listings extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     // const { listProperties } = this.props;
     return (
@@ -17,7 +22,7 @@ class Listings extends React.Component {
                   <div className='card-header'>Property Details</div>
                   <div className='card-body'>
                     <div className='col'>
-                      <img className='rounded img-thumbnail' src={} />
+                      <img className='rounded img-thumbnail' src={'http://i.imgur.com/khvc2yb.png'} />
                     </div>
                     <div className='col'>
                       <div className='card'>
