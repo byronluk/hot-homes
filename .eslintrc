@@ -4,7 +4,8 @@
     "ecmaFeatures": {
       "jsx": true,
       "mocha": true
-    }
+    },
+    "sourceType": "module"    
   },
   "env": {
     "browser": true,
@@ -16,6 +17,7 @@
   "extends": ["eslint:recommended", "plugin:react/recommended", "loopback"],
   "rules": {
     "semi": 2,
-    "no-console": 0
+    "no-console": 0,
+    "object-curly-spacing": 0
   }
 }

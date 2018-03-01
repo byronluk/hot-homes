@@ -1,13 +1,14 @@
 import React from 'react';
-import { render, ReactDOM } from 'react-dom';
+import { render } from 'react-dom';
 import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import promiseMiddleware from 'redux-promise-middleware';
+import thunk from 'redux-thunk';
 import reducer from './root-reducer';
 import initialState from './initial-state';
 import App from './App';
 
-const middleware = [ promiseMiddleware() ];
+const middleware = [promiseMiddleware(), thunk];
 const enhancers = [];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

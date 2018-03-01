@@ -1,24 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavigationBar from '../componets/NavigationBar';
-import SearchBar from '../components/SearchBar';
+import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import SearchBar from '../../components/SearchBar';
 
-class Listings extends React.Componet {
-  constructor(props) {
-    super(props);
-  }
-
-
+class Listings extends React.Component {
   render() {
-    const { listProperties } = this.props;
-
+    // const { listProperties } = this.props;
     return (
       <div className='container'>
         <NavigationBar />
-        <SearchBar />
         <div className='row'>
           <div className='col-12 col-md-12 mb-4'>
-            {listProperties.length !== 0 && listProperties.map((listProperty, index) =>
+          <h2>Listings Page</h2>
+            {/* {listProperties.length !== 0 && listProperties.map((listProperty, index) =>
               <li key={index} >
                 <div className='card'>
                   <div className='card-header'>Property Details</div>
@@ -40,7 +34,7 @@ class Listings extends React.Componet {
                   </div>
                 </div>
               </li>)
-            }
+            } */}
           </div>
         </div>
       </div>
@@ -48,3 +42,5 @@ class Listings extends React.Componet {
     )
   }
 }
+
+export default Listings;

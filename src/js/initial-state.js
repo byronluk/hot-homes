@@ -14,11 +14,12 @@ const initialState = {
 
   searchBar: {
     input: '',
+    results: [],
   },
 
   logIn: {
     email: '',
-    password:''
+    password: '',
   },
 
   rentListings: {
@@ -34,7 +35,7 @@ const initialState = {
   currentSession: {
     currentUser: '',
     currentProperty: '',
-  }
+  },
 };
 
 export default initialState;
