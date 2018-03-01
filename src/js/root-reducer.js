@@ -3,14 +3,18 @@ import signUpReducer from './reducers/sign-up';
 import logInReducer from './reducers/log-in';
 import homePageReducer from './reducers/home-page';
 import searchBarReducer from './reducers/search-bar';
+import rentListingReducer from './reducers/rent-listings';
 import navBarReducer from './reducers/navigation-bar';
+import currentSessionReducer from './reducers/current-session';
 
 const reducer = combineReducers({
     signUp: signUpReducer,
     logIn: logInReducer,
     homePage: homePageReducer,
     searchBar: searchBarReducer,
-    navBar: navBarReducer
+    rentListings: rentListingReducer,
+    navBar: navBarReducer,
+    currentSession: currentSessionReducer,
 });
 
 export default reducer;
