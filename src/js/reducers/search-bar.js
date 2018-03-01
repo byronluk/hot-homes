@@ -12,8 +12,10 @@ function searchBarReducer(state = initialState.searchBar, action) {
 
     case 'SEARCH_PROPERTIES': {
       const { results } = action;
-      console.log(results);
-      return state;
+      return {
+        ...state,
+        results,
+      };
     }
 
     default: {
