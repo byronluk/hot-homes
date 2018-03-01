@@ -4,16 +4,10 @@ function navBarReducer(state = initialState.navBar, action) {
   switch (action.type) {
 
     case 'TOGGLE_HIDDEN': {
+      const { name } = action;
       return {
         ...state,
-        toggleLogIn: action.toggleLogIn,
-      };
-    }
-
-    case 'TOGGLE_SIGN_UP': {
-      return {
-        ...state,
-        toggleSignUp: action.toggleSignUp,
+        [[name]]: true,
       };
     }
 

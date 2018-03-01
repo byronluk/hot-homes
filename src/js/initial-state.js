@@ -27,7 +27,8 @@ const initialState = {
   },
 
   navBar: {
-    toggleHidden: true
+    toggleSignUp: false,
+    toggleLogIn: false,
   },
 
   currentSession: {

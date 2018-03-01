@@ -1,6 +1,7 @@
-export const toggleHidden = (value) => {
-    return {
-      type: 'TOGGLE_HIDDEN',
-      toggleLogIn: value
-    }
-  }
+export const toggleHidden = (name) => {
+  return {
+    type: 'TOGGLE_HIDDEN',
+    name,
+  };
+};
+
