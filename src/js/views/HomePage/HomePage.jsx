@@ -9,36 +9,61 @@ import Footer from '../../components/Footer/Footer';
 
 class HomePage extends React.Component {
   render() {
-    const { homePage, toggleLogIn } = this.props;
+    const { homePage, toggleLogIn, auth } = this.props;
     return (
       <div>
-        <NavigationBar />
-        <SearchBar />
-
-        {homePage.toggleLogIn ?
-           <div>
-            <h2>Log In</h2>
-             <a href='#' onClick={() => toggleLogIn(false)}>
-              or click here to sign up
-            </a>
-            <LogIn />
-          </div> :
-          <div>
-            <h2>Sign Up</h2>
-            <a href='#' onClick={() => toggleLogIn(true)}>
-              or click here to log in
-            </a>
-            <SignUp />
-          </div>}
+        <NavigationBar isHomePage={true} toggleLogIn={ toggleLogIn } />
+        <div className="main-section">
+          <div className="columns">
+            <div className="column search-bar">
+              <p className="title home-page">Search for properties now!</p>
+              <SearchBar isHomePage={true} />
+            </div>
+            {auth.status === 'AUTHENTICATED' &&
+              <h1 className="is-size-4 has-text-dark">Welcome back {auth.firstName + ' ' + auth.lastName}</h1>}
+            {auth.status === 'ANONYMOUS' &&
+              <AnonymousSection
+                showLogIn={homePage.toggleLogIn}
+                handleClick={toggleLogIn}
+              />
+            }
+          </div>
+        </div>
         <Footer />
       </div>
     );
   }
 }
+//  if no user is logged in, display this section
+const AnonymousSection = ({ handleClick, showLogIn }) => {
+  return (
+    showLogIn ?
+      <div className="column">
+        <h3 className="title">Log In</h3>
+        <a href="#" className="subtitle home-page" onClick={() => handleClick(false)}>
+          or click here to sign up
+        </a>
+        <LogIn isHomePage={true} />
+      </div> :
+      <div className="column">
+        <h3 className="title">Sign Up</h3>
+        <a href="#" className="subtitle home-page" onClick={() => handleClick(true)}>
+          or click here to log in
+        </a>
+        <SignUp isHomePage={true} />
+      </div>
+  );
+};
 
 HomePage.propTypes = {
   homePage: PropTypes.object,
+  auth: PropTypes.object,
   toggleLogIn: PropTypes.func,
+};
+
+AnonymousSection.propTypes = {
+  handleClick: PropTypes.func,
+  showLogIn: PropTypes.bool,
 };
 
 export default HomePage;

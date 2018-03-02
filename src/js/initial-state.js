@@ -14,6 +14,10 @@ const initialState = {
     status: 'ANONYMOUS',
     username: '',
     email: '',
+    firstName: '',
+    lastName: '',
+    isLandlord: false,
+    id: '',
   },
   homePage: {
     toggleLogIn: false,

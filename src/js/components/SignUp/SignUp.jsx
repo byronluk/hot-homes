@@ -1,6 +1,7 @@
 import React from 'react';
-import { createUser, updateSignUp } from '../../actions/sign-up';
+import PropTypes from 'prop-types';
 import axios from 'axios';
+import { createUser, updateSignUp, closeHiddenFields } from '../../actions/sign-up';
 
 class SignUp extends React.Component {
 
@@ -8,19 +9,25 @@ class SignUp extends React.Component {
     super(props);
     this.validateAndSubmit = this.validateAndSubmit.bind(this);
     this.updateForm = this.updateForm.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   validateAndSubmit(e) {
-    //don't do any silly redirects
-    const { firstName, lastName, username, email, password, isLandlord } = this.props.signUp;
+    //  don't do any silly redirects
+    const {
+      firstName,
+      lastName,
+      username,
+      email,
+      password,
+      isLandlord } = this.props.signUp;
     e.preventDefault();
-
 
     if (!firstName.match(/^[a-z]+$/i) || !lastName.match(/^[a-z]+$/i)) {
       console.log('name validation failed');
       return false;
     }
-    //literally black magic
+    //  literally black magic
     if (!email.match(/^[^@]+@[^\.]+(\.[a-z0-9]+)*\.[a-z]+/i)) {
       console.log('email validation failed');
       return false;
@@ -31,7 +38,6 @@ class SignUp extends React.Component {
       return false;
     }
 
-
     axios.get('./api/users').then(data => {
 
       console.log(data.data);
@@ -40,7 +46,7 @@ class SignUp extends React.Component {
         return false;
       }
 
-      //if all of those pass, go ahead and create a new user
+      //  if all of those pass, go ahead and create a new user
       this.props.dispatch(createUser({
         firstName: firstName,
         lastName: lastName,
@@ -48,7 +54,7 @@ class SignUp extends React.Component {
         username: username,
         password: password,
         isLandlord: isLandlord,
-      }))
+      }));
     })
       .catch(err => {
         console.log('Server error: ' + err);
@@ -66,7 +72,6 @@ class SignUp extends React.Component {
       }
     }
     return true;
-
   }
 
   updateForm(e) {
@@ -75,56 +80,126 @@ class SignUp extends React.Component {
     this.props.dispatch(updateSignUp({ name: name, value: value }));
   }
 
+  handleCancel(event) {
+    const { dispatch } = this.props;
+    event.stopPropagation();
+    if (event.target !== event.currentTarget) return;
+    dispatch(closeHiddenFields());
+  }
+
   render() {
-    const { signUp } = this.props;
+    const { signUp, isHomePage } = this.props;
     return (
-      <div>
-        <form>
+      <div className={isHomePage ? 'column' : 'modal is-active'}>
+        <div
+          className={isHomePage ? '' : 'modal-background'}
+          onClick={isHomePage ? () => { return; } : this.handleCancel}
+        >
+          <form className={isHomePage ? '' : 'modal-content has-text-grey-lighter modal-format'}>
 
-          <input
-            value={signUp.firstName}
-            type='text'
-            onChange={this.updateForm}
-            name='firstName'
-            placeholder='First Name'
-          />
-          <input
-            value={signUp.lastName}
-            type='text'
-            onChange={this.updateForm}
-            name='lastName'
-            placeholder='Last Name'
-          />
-          <input
-            value={signUp.username}
-            type='text'
-            onChange={this.updateForm}
-            name='username'
-            placeholder='Username'
-          />
-          <input
-            value={signUp.email}
-            type='text'
-            onChange={this.updateForm}
-            name='email'
-            placeholder='Email'
-          />
-          <input
-            value={signUp.password}
-            type='password'
-            onChange={this.updateForm}
-            name='password'
-            placeholder='Password'
-          />
-
-          <p>Are you planning on listing your own properties?</p>
-          <input type='checkbox' onChange={this.updateForm} name='isLandlord' />
-
-          <button type='submit' onClick={this.validateAndSubmit}>Submit</button>
-        </form>
+            <div className="field">
+              <label className={isHomePage ? 'label' : 'label has-text-grey-lighter'}>First Name</label>
+              <input
+                className="input"
+                value={signUp.firstName}
+                type='text'
+                onChange={this.updateForm}
+                name='firstName'
+                placeholder='First Name'
+              />
+            </div>
+            <div className="field">
+              <label className={isHomePage ? 'label' : 'label has-text-grey-lighter'}>Last Name</label>
+              <input
+                className="input"
+                value={signUp.lastName}
+                type='text'
+                onChange={this.updateForm}
+                name='lastName'
+                placeholder='Last Name'
+              />
+            </div>
+            <div className="field">
+              <label className={isHomePage ? 'label' : 'label has-text-grey-lighter'}>Username</label>
+              <div className="control has-icons-left">
+                <span className="icon is-small is-left">
+                  <i className="fas fa-user"></i>
+                </span>
+                <input
+                  className="input"
+                  value={signUp.username}
+                  type='text'
+                  onChange={this.updateForm}
+                  name='username'
+                  placeholder='Username'
+                />
+              </div>
+            </div>
+            <div className="field">
+              <label className={isHomePage ? 'label' : 'label has-text-grey-lighter'}>Email</label>
+              <div className="control has-icons-left">
+                <input
+                  className="input"
+                  value={signUp.email}
+                  type='text'
+                  onChange={this.updateForm}
+                  name='email'
+                  placeholder='Email'
+                />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-envelope"></i>
+                </span>
+              </div>
+            </div>
+            <div className="field">
+              <label className={isHomePage ? 'label' : 'label has-text-grey-lighter'}>Password</label>
+              <div className="control has-icons-left">
+                <input
+                  className="input"
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  value={signUp.password}
+                  onChange={this.updateForm}
+                />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-lock"></i>
+                </span>
+              </div>
+            </div>
+            <div className="field">
+              <div className="control">
+                <label className="checkbox">
+                  <input
+                    type="checkbox"
+                    onChange={this.updateForm}
+                    name="isLandlord"
+                  />
+                  Are you planning on listing your own properties?
+              </label>
+              </div>
+            </div>
+            <button
+              className="button"
+              type="submit"
+              onClick={this.validateAndSubmit}>Submit</button>
+            <a
+              onClick={this.handleCancel}
+              className={isHomePage ? 'display-none' : 'modal-close is-large delete'}
+              aria-label="close">
+            </a>
+          </form>
+        </div>
       </div>
-    )
+    );
   }
 }
+
+SignUp.propTypes = {
+  signUp: PropTypes.object,
+  isHomePage: PropTypes.bool,
+  dispatch: PropTypes.func,
+  handleCancel: PropTypes.func,
+};
 
 export default SignUp;

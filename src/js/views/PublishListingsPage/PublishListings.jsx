@@ -2,31 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class PublishListings extends React.Component {
- 
+  constructor(props) {
+    super(props);
+    this.updateForm = this.updateForm.bind(this);
+  }
+  updateForm(e) {
+    const name = e.target.name;
+    const value = e.target.value;
+    this.props.dispatch(updatePublishListings({ name: name, value: value }))
+  }
   render() {
     const { publishListings, updateForm, handleSubmit } = this.props;
     const { bedrooms, bathrooms, street, city, state, zipCode, latitude, longtitude, amentities, price } = publishListings;
 
-    
+
     return (
-      
+
       <div>
         <h1>What kind of place are you listing?</h1>
-        <form onSubmit={ e => e.preventDefault() }>>
+        <form onSubmit={e => e.preventDefault()}>>
           <div className='form-group'>
             <label for='guests-number-input'>How many bedrooms?</label>
             <input
               type='number'
-              value={ bedrooms }
-              onChange={ updateForm }
+              value={bedrooms}
+              onChange={updateForm}
               name='bedrooms' />
           </div>
           <div className='form-group'>
             <label for='roomNumber'>How many bathrooms?</label>
             <input
               type='number'
-              value={ bathrooms}
-              onChange={ updateForm }
+              value={bathrooms}
+              onChange={updateForm}
               name='bathrooms' />
           </div>
           <div className='form-group'>
@@ -34,20 +42,20 @@ class PublishListings extends React.Component {
             <label for=''>Street Address</label>
             <input
               type='text'
-              value={ street }
-              onChange={ updateForm}
+              value={street}
+              onChange={updateForm}
               name='street' />
             <label for=''>City</label>
             <input
               type='text'
-              value={ city }
-              onChange={ updateForm}
+              value={city}
+              onChange={updateForm}
               name='city' />
             <label for=''>State</label>
             <input
               type='text'
-              value={ state}
-              onChange={ updateForm}
+              value={state}
+              onChange={updateForm}
               name='state' />
             <label for=''>Zip Code</label>
             <input
@@ -73,27 +81,27 @@ class PublishListings extends React.Component {
               value={amentities}
               onChange={updateForm}
               name='amentities' />
-            </div>
-            <div>
+          </div>
+          <div>
             <label for=''>Price</label>
             <input
               type='number'
-              value={ price}
+              value={price}
               onChange={updateForm}
               name='price' />
-            </div>
-            <button type='submit' onClick={ handleSubmit}>Submit</button>
-          </form>
-
           </div>
-          );
-        }
-      }
-    
+          <button type='submit' onClick={handleSubmit}>Submit</button>
+        </form>
+
+      </div>
+    );
+  }
+}
+
 PublishListings.propTypes = {
   publishListings: PropTypes.object,
   updateForm: PropTypes.func,
   handleSubmit: PropTypes.func,
 };
-  
+
 export default PublishListings;

@@ -10,10 +10,16 @@ export function updateLogIn(name, value) {
 
 export function logIn(user) {
   return {
-    type: 'USER_LOGIN_FULFILLED',
+    type: 'LOGGED_IN',
     user,
   };
 }
+
+export const closeHiddenFields = () => {
+  return {
+    type: 'CANCEL_SIGN_UP',
+  };
+};
 
 function passwordValidationFailed() {
   return {

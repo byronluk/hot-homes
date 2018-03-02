@@ -38,7 +38,7 @@ export default class ListingDetails extends React.Component {
       return (
         <div>
           <NavigationBar />
-          <div>
+          <div className="main-section">
             <p>{this.state.address.city}, {this.state.address.state}</p>
             <p>{this.state.description.bedrooms} bedrooms, {this.state.description.bathrooms} bathrooms</p>
             <p>Price: ${this.state.description.price}</p>

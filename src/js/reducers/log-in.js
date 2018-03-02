@@ -11,6 +11,14 @@ function logInReducer(state = initialState.logIn, action) {
       };
     }
 
+    case 'LOGGED_IN': {
+      return initialState.logIn;
+    }
+
+    case 'CANCEL_SIGN_UP': {
+      return initialState.logIn;
+    }
+
     case 'USER_LOGIN_REJECTED': {
       console.log('invalid email or password');
       return state;

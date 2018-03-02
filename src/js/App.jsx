@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router, Route } from 'react-router-dom';
 import history from './history';
+import 'bulma/css/bulma.css';
 
 import Home from './views/HomePage';
 import Listings from './views/ListingsPage';
