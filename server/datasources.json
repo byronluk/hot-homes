@@ -1,5 +1,4 @@
 {
-  
   "MongoDB": {
     "host": "",
     "port": 0,
@@ -8,6 +7,16 @@
     "password": "",
     "name": "MongoDB",
     "user": "",
+    "connector": "mongodb"
+  },
+  "mlab": {
+    "host": "ds253918.mlab.com",
+    "port": 53918,
+    "url": "",
+    "database": "hothomes",
+    "password": "HH12345",
+    "name": "mlab",
+    "user": "hothomes",
     "connector": "mongodb"
   }
 }
