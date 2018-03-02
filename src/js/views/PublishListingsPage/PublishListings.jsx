@@ -1,35 +1,32 @@
 import React from 'react';
-//import { } from './action';
+import PropTypes from 'prop-types';
 
 class PublishListings extends React.Component {
-  constructor(props) {
-    super(props);
-    this.updateForm = this.updateForm.bind(this);
-  }
-updateForm(e) {
-  const name = e.target.name;
-  const value = e.target.value;
-  this.props.dispatch(updatePublishListings({ name: name, value: value}))
-}
+ 
   render() {
+    const { publishListings, updateForm, handleSubmit } = this.props;
+    const { bedrooms, bathrooms, street, city, state, zipCode, latitude, longtitude, amentities, price } = publishListings;
+
+    
     return (
+      
       <div>
         <h1>What kind of place are you listing?</h1>
-        <form>
+        <form onSubmit={ e => e.preventDefault() }>>
           <div className='form-group'>
             <label for='guests-number-input'>How many bedrooms?</label>
             <input
               type='number'
-              value={publishlistings.bedrooms}
-              onChange={this.updateForm}
+              value={ bedrooms }
+              onChange={ updateForm }
               name='bedrooms' />
           </div>
           <div className='form-group'>
             <label for='roomNumber'>How many bathrooms?</label>
             <input
               type='number'
-              value={publishlistings.bathrooms}
-              onChange={this.updateForm}
+              value={ bathrooms}
+              onChange={ updateForm }
               name='bathrooms' />
           </div>
           <div className='form-group'>
@@ -37,60 +34,66 @@ updateForm(e) {
             <label for=''>Street Address</label>
             <input
               type='text'
-              value={publishlistings.street}
-              onChange={this.updateForm}
+              value={ street }
+              onChange={ updateForm}
               name='street' />
             <label for=''>City</label>
             <input
               type='text'
-              value={publishlistings.city}
-              onChange={this.updateForm}
+              value={ city }
+              onChange={ updateForm}
               name='city' />
             <label for=''>State</label>
             <input
               type='text'
-              value={publishlistings.state}
-              onChange={this.updateForm}
+              value={ state}
+              onChange={ updateForm}
               name='state' />
             <label for=''>Zip Code</label>
             <input
               type='number'
-              value={publishlistings.zipCode}
-              onChange={this.updateForm}
+              value={zipCode}
+              onChange={updateForm}
               name='zipCode' />
             <label for=''>Latitude</label>
             <input
               type='text'
-              value={publishlistings.latitude}
-              onChange={this.updateForm}
+              value={latitude}
+              onChange={updateForm}
               name='latitude' />
             <label for=''>Longtitude</label>
             <input
               type='text'
-              value={publishlistings.longtitude}
-              onChange={this.updateForm}
+              value={longtitude}
+              onChange={updateForm}
               name='city' />
             <label for=''>Amentities</label>
             <input
               type='text'
-              value={publishlistings.amentities}
-              onChange={this.updateForm}
+              value={amentities}
+              onChange={updateForm}
               name='amentities' />
             </div>
             <div>
             <label for=''>Price</label>
             <input
               type='number'
-              value={publishlistings.price}
-              onChange={this.updateForm}
+              value={ price}
+              onChange={updateForm}
               name='price' />
             </div>
-
+            <button type='submit' onClick={ handleSubmit}>Submit</button>
           </form>
 
           </div>
           );
         }
       }
-      
+    
+PublishListings.propTypes = {
+  publishListings: PropTypes.object,
+  updateForm: PropTypes.func,
+  handleSubmit: PropTypes.func,
+};
+  
 export default PublishListings;

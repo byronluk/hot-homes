@@ -34,6 +34,10 @@ const initialState = {
     currentUser: '',
     currentProperty: '',
   },
+  publishListings: {
+    input: '',
+    listProperties: []
+  }
 };
 
 export default initialState;
