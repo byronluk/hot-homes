@@ -11,9 +11,12 @@ function signUpReducer(state = initialState.signUp, action) {
       };
     }
 
+    case 'CANCEL_SIGN_UP': {
+      return initialState.signUp;
+    }
+
     case 'CREATE_USER_FULFILLED': {
-      console.log('User successfully created');
-      return state;
+      return initialState.signUp;
     }
 
     case 'CREATE_USER_REJECTED': {

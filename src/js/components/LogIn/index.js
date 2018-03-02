@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateLogIn, validateAndSubmit } from '../../actions/log-in';
+import { updateLogIn, validateAndSubmit, closeHiddenFields } from '../../actions/log-in';
 import LogIn from './LogIn';
 
 function mapStatetoProps({ logIn }) {
@@ -13,6 +13,11 @@ function mapDispatchToProps(dispatch) {
     },
     handleSubmit() {
       dispatch(validateAndSubmit());
+    },
+    handleCancel(event) {
+      event.stopPropagation();
+      if (event.target !== event.currentTarget) return;
+      dispatch(closeHiddenFields());
     },
   };
 }
