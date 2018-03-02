@@ -11,6 +11,10 @@ function navBarReducer(state = initialState.navBar, action) {
       };
     }
 
+    case 'USER_LOGIN_FULFILLED': {
+      return initialState.navBar;
+    }
+
     default: {
       return state;
     }

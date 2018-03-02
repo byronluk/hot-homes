@@ -1,81 +1,46 @@
 import React from 'react';
-import { updateLogIn } from '../../actions/log-in';
+import PropTypes from 'prop-types';
 
 class LogIn extends React.Component {
-  constructor(props) {
-    super(props);
-    this.validateAndSubmit = this.validateAndSubmit.bind(this);
-    this.updateForm = this.updateForm.bind(this);
-  }
-
-  validateAndSubmit(e) {
-    const { email, password } = this.props.login;
-    e.preventDefault();
-
-    if (password.length < 8) {
-      console.log('password validation failed');
-      return false;
-    }
-    axios.get('./api/users').then(data => {
-      if (this.isMatching(data.data, email, password)) {
-        dispatch(logIn({ email: email, password: password }))
-      } else {
-        console.log('Invalid email or password')
-      }
-
-    })
-  }
-
-  isMatching(data, name, password) {
-    console.log(data);
-
-    for (let i = 0; i < data.length; i++) {
-      let entry = data[i];
-      if ((entry.email == name || entry.username == name) && entry.password == password) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-
-updateForm(e) {
-  const { dispatch } = this.props;
-  const name = e.target.name;
-  const value = e.target.value;
-
-  dispatch(updateLogIn({ name: name, value: value }));
-}
-
-render() {
-  const { logIn } = this.props;
-  return (
-    <div>
-      <form className='Login-form'>
+  render() {
+    const { logIn, updateForm, handleSubmit } = this.props;
+    const { emailOrUsername, password } = logIn;
+    return (
+      <form onSubmit={ e => e.preventDefault() }>
         <input
-          type='text'
-          onChange={this.updateForm}
-          name='email'
-          placeholder='Email' />
+          type="text"
+          value={ emailOrUsername }
+          onChange={ updateForm }
+          name="emailOrUsername"
+          placeholder="Email or username" />
 
         <input
-          type='password'
-          onChange={this.updateForm}
-          name='password'
-          placeholder='Password' />
+          type="password"
+          value={ password }
+          onChange={ updateForm }
+          name="password"
+          placeholder="Password" />
 
         <input
-          type='checkbox'
-          onChange={this.updateForm}
-          name='remember' />Remember me
-          <button
-          type='submit'
-          onClick={this.validateAndSubmit}>Log In</button>
-      </form>
+          type="checkbox"
+          onChange={ updateForm }
+          name="remember" />Remember me
+
+        <button
+          type="submit"
+          onClick={ handleSubmit }
+        >Log In</button>
+
       <p>Forgot your password?</p>
-    </div>
-  )
+    </form>
+    );
+  }
 }
-}
+
+LogIn.propTypes = {
+  logIn: PropTypes.object,
+  updateForm: PropTypes.func,
+  handleSubmit: PropTypes.func,
+};
 
 export default LogIn;
