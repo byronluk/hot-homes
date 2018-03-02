@@ -34,8 +34,9 @@ class SignUp extends React.Component {
 
     axios.get('./api/users').then(data => {
 
-      if (!this.isAvailable(data.data, username)) {
-        console.log('username is already taken');
+      console.log(data.data);
+      if (!this.isAvailable(data.data, username, email)) {
+        console.log('username/email is already taken');
         return false;
       }
 
@@ -55,15 +56,15 @@ class SignUp extends React.Component {
       });
   }
 
-  isAvailable(data, name) {
-    console.log(data);
-    data.forEach(element => {
+  isAvailable(data, name, email) {
+        
+    for (let i = 0; i < data.length; i++) {
 
-    }); (entry => {
-      if (entry.username == name) {
+      let entry = data[i];
+      if (entry.username == name || entry.email == email) {
         return false;
       }
-    });
+    }
     return true;
 
   }
