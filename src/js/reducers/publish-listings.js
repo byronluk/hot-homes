@@ -1,6 +1,6 @@
 import initalState from './initial-state';
 
-function PublishListingsReducer(state = initalState.publishlistings, action) {
+function publishListingsReducer(state = initalState.publishlistings, action) {
     switch (action.type) {
         case 'UPDATE_PUBLISH_LISTINGS_FORM': {
             var listProperty = {
@@ -22,4 +22,4 @@ function PublishListingsReducer(state = initalState.publishlistings, action) {
     }
 }
 
-export default PublishListingsReducer;
+export default publishListingsReducer;
