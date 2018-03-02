@@ -11,7 +11,15 @@ function navBarReducer(state = initialState.navBar, action) {
       };
     }
 
-    case 'USER_LOGIN_FULFILLED': {
+    case 'LOGGED_IN': {
+      return initialState.navBar;
+    }
+
+    case 'CREATE_USER': {
+      return initialState.navBar;
+    }
+
+    case 'CANCEL_SIGN_UP': {
       return initialState.navBar;
     }
 

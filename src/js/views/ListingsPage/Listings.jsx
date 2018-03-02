@@ -11,10 +11,9 @@ class Listings extends React.Component {
   render() {
     const { searchBar } = this.props;
     return (
-      <div className='container'>
+      <div>
         <NavigationBar />
-        <h2>Listings Page</h2>
-        <div>
+        <div className="main-section">
           {searchBar.results.length === 0 &&
             <h1>Sorry, no properties are available in this location</h1>}
           {searchBar.results.length > 0 &&

@@ -1,16 +1,15 @@
 import React from 'react';
-//import { } from './action';
 
 class PublishListings extends React.Component {
   constructor(props) {
     super(props);
     this.updateForm = this.updateForm.bind(this);
   }
-updateForm(e) {
-  const name = e.target.name;
-  const value = e.target.value;
-  this.props.dispatch(updatePublishListings({ name: name, value: value}))
-}
+  updateForm(e) {
+    const name = e.target.name;
+    const value = e.target.value;
+    this.props.dispatch(updatePublishListings({ name: name, value: value }))
+  }
   render() {
     return (
       <div>
@@ -76,21 +75,21 @@ updateForm(e) {
               value={publishlistings.amentities}
               onChange={this.updateForm}
               name='amentities' />
-            </div>
-            <div>
+          </div>
+          <div>
             <label for=''>Price</label>
             <input
               type='number'
               value={publishlistings.price}
               onChange={this.updateForm}
               name='price' />
-            </div>
-
-          </form>
-
           </div>
-          );
-        }
-      }
-      
+
+        </form>
+
+      </div>
+    );
+  }
+}
+
 export default PublishListings;

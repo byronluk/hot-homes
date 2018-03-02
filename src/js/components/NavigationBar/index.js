@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { toggleHidden, logOut } from '../../actions/navigation-bar';
+import { toggleHidden, logOut, closeHiddenFields } from '../../actions/navigation-bar';
 import NavigationBar from './NavigationBar';
 
 const mapStateToProps = ({ navBar, auth }) => {
@@ -13,6 +13,10 @@ const mapDispatchToProps = (dispatch) => {
     },
     handleLogOut() {
       dispatch(logOut());
+    },
+
+    handleCancel() {
+      dispatch(closeHiddenFields());
     },
   };
 };

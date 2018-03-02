@@ -13,3 +13,9 @@ export function updateSignUp(action) {
     payload: action,
   };
 }
+
+export const closeHiddenFields = () => {
+  return {
+    type: 'CANCEL_SIGN_UP',
+  };
+};
