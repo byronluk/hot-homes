@@ -1,5 +1,8 @@
 import React from 'react';
+<<<<<<< HEAD
 import PropTypes from 'prop-types';
+=======
+>>>>>>> 0af28b1637e0efd1e3ef348fa06f390216b071e8
 
 class PublishListings extends React.Component {
   constructor(props) {
