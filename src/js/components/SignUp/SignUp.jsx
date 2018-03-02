@@ -52,19 +52,14 @@ class SignUp extends React.Component {
       .catch(err => {
         console.log('Server error: ' + err);
         return false;
-      });;
-
-
-
-
-
+      });
   }
 
   isAvailable(data, name) {
     console.log(data);
     data.forEach(element => {
-      
-    });(entry => {
+
+    }); (entry => {
       if (entry.username == name) {
         return false;
       }
@@ -86,35 +81,35 @@ class SignUp extends React.Component {
         <form>
 
           <input
-            value={ signUp.firstName }
+            value={signUp.firstName}
             type='text'
             onChange={this.updateForm}
             name='firstName'
             placeholder='First Name'
           />
           <input
-            value={ signUp.lastName }          
+            value={signUp.lastName}
             type='text'
             onChange={this.updateForm}
             name='lastName'
             placeholder='Last Name'
           />
           <input
-            value={ signUp.username }          
+            value={signUp.username}
             type='text'
             onChange={this.updateForm}
             name='username'
             placeholder='Username'
           />
           <input
-            value={ signUp.email }            
+            value={signUp.email}
             type='text'
             onChange={this.updateForm}
             name='email'
             placeholder='Email'
           />
           <input
-            value={ signUp.password }                      
+            value={signUp.password}
             type='password'
             onChange={this.updateForm}
             name='password'
