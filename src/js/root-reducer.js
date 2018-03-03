@@ -18,7 +18,7 @@ const reducer = combineReducers({
     navBar: navBarReducer,
     currentSession: currentSessionReducer,
     auth: authReducer,
-    publishListings: publishListingsReducer,
+    publishListings: publishListingsReducer
 });
 
 export default reducer;

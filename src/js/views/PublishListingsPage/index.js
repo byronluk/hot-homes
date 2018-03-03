@@ -13,8 +13,9 @@ const mapDispatchToProps = (dispatch) => {
     updateForm(event) {
       dispatch(updatePublishListings(event.target.name, event.target.value));
     },
-    handleSubmit() {
-      dispatch(updatedDatabaseProperty())
+    handleSubmit(event) {
+      event.preventDefault();
+      dispatch(updateDatabaseProperty())
     }
   }
 
