@@ -1,11 +1,17 @@
 import axios from 'axios';
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
-export function updatePublishListings(action) {
+export function updatePublishListings(name, value) {
     return {
         type: 'UPDATE_PUBLISH_LISTINGS_FORM',
-        payload: action,
+        name, value
     }
+}
+
+export const cancelForm = () => {
+    return {
+        type: 'CANCEL_PUBLISH_LISTINGS',
+    };
 }
 
 export function updateDatabaseProperty(action) {
