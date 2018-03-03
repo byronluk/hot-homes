@@ -17,6 +17,7 @@ const initialState = {
     firstName: '',
     lastName: '',
     isLandlord: false,
+    myProperties: [],
     id: '',
   },
   homePage: {
@@ -39,8 +40,16 @@ const initialState = {
     currentProperty: '',
   },
   publishListings: {
-    input: '',
-    listProperties: []
+    bedrooms: '', 
+    bathrooms:'', 
+    street:'', 
+    city:'', 
+    state:'', 
+    zipCode:'', 
+    description: '',
+    amentities:'', 
+    price:'',
+    photoUrl: [],
   }
 };
 

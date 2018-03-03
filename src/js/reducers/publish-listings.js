@@ -1,20 +1,23 @@
 import initalState from '../initial-state';
 
-function publishListingsReducer(state = initalState.publishlistings, action) {
+function publishListingsReducer(state = initalState.publishListings, action) {
     switch (action.type) {
         case 'UPDATE_PUBLISH_LISTINGS_FORM': {
-            var listProperty = {
-                [[action.payload.name]]: action.payload.value,
-            }
-            var newListProperties = [...state.listProperties];
-            newListProperties.push(listProperty);
             return {
                 ...state,
-                listProperties: newListProperties
+                [[action.name]]: action.value,
             }
         }
-        case 'UPDATE_DATABASE_PROPERTY': {
-            return state;
+        case 'UPDATE_DATABASE_PROPERTY_FULFILLED': {
+            var myProperty = {
+                [[action.payload.name]]: action.payload.value,
+            }
+            var newMyProperties = [...state.myProperties];
+            newMyProperties.push(myProperty);
+            return {
+                ...state,
+                auth: [newMyProperties, ...auth]
+            }
         }
         default: {
             return state;
@@ -23,3 +26,4 @@ function publishListingsReducer(state = initalState.publishlistings, action) {
 }
 
 export default publishListingsReducer;
+

@@ -34,7 +34,7 @@ function filterLocations(data, location) {
       lat2: location.lat,
       lon2: location.lng,
     };
-    var distance = distanceInKmBetweenEarthCoordinates(coordinates);
+    var distance = distanceInMilesBetweenEarthCoordinates(coordinates);
     if (distance <= 25) {
       results.push(properties[i]);
     }
@@ -47,7 +47,7 @@ function degreesToRadians(degrees) {
   return degrees * Math.PI / 180;
 }
 
-function distanceInKmBetweenEarthCoordinates({ lat1, lon1, lat2, lon2 }) {
+function distanceInMilesBetweenEarthCoordinates({ lat1, lon1, lat2, lon2 }) {
   var earthRadiusMiles = 3959;
 
   var dLat = degreesToRadians(lat2 - lat1);

@@ -7,7 +7,7 @@ import rentListingReducer from './reducers/rent-listings';
 import navBarReducer from './reducers/navigation-bar';
 import currentSessionReducer from './reducers/current-session';
 import authReducer from './reducers/auth';
-import publishlistingsReducer from './reducers/publish-listings';
+import publishListingsReducer from './reducers/publish-listings';
 
 const reducer = combineReducers({
     signUp: signUpReducer,
@@ -18,7 +18,7 @@ const reducer = combineReducers({
     navBar: navBarReducer,
     currentSession: currentSessionReducer,
     auth: authReducer,
-    publishlistings: publishlistingsReducer
+    publishListings: publishListingsReducer
 });
 
 export default reducer;
