@@ -14,34 +14,34 @@
     ]
   },
   "AccessToken": {
-    "dataSource": "mlab",
+    "dataSource": "MongoDB",
     "public": false
   },
   "ACL": {
-    "dataSource": "mlab",
+    "dataSource": "MongoDB",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "mlab",
+    "dataSource": "MongoDB",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "mlab",
+    "dataSource": "MongoDB",
     "public": false
   },
   "user": {
-    "dataSource": "mlab",
+    "dataSource": "MongoDB",
     "public": true
   },
   "property": {
-    "dataSource": "mlab",
+    "dataSource": "MongoDB",
     "public": true
   },
   "reservation": {
-    "dataSource": "mlab",
+    "dataSource": "MongoDB",
     "public": true
   }
 }

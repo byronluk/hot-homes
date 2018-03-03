@@ -17,6 +17,7 @@ const initialState = {
     firstName: '',
     lastName: '',
     isLandlord: false,
+    ownProperties: [],
     id: '',
   },
   homePage: {
@@ -25,6 +26,7 @@ const initialState = {
   searchBar: {
     input: '',
     results: [],
+    currentSearch: '',
   },
   rentListings: {
     startDate: '',
@@ -40,8 +42,8 @@ const initialState = {
   },
   publishListings: {
     input: '',
-    listProperties: []
-  }
+    listProperties: [],
+  },
 };
 
 export default initialState;

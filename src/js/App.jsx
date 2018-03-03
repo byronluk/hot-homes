@@ -8,7 +8,7 @@ import Listings from './views/ListingsPage';
 import RentListings from './views/RentListingsPage';
 import ListingsDetails from './views/ListingsDetailsPage';
 import PublishListings from './views/PublishListingsPage';
-// import Profile from './views/ProfilePage';
+import Profile from './views/ProfilePage';
 
 export default class App extends React.Component {
   render() {
@@ -19,7 +19,7 @@ export default class App extends React.Component {
           <Route exact path='/listings' component={Listings} />
           <Route path='/listings/:id' component={ListingsDetails} />
           <Route path='/listings/:id/:book' component={RentListings} />
-          {/* <Route path='/user' component={Profile} /> */}
+          <Route path='/user' component={Profile} />
           <Route path='/user/publish' component={PublishListings} />
         </div>
       </Router>

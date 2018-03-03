@@ -8,7 +8,7 @@ export const onSearchBarChange = (value) => {
   };
 };
 
-export const searchProperties = (location) => {
+export const searchProperties = (location, currentSearch) => {
   return (dispatch) => {
     axios
       .get('/api/properties')
@@ -17,6 +17,7 @@ export const searchProperties = (location) => {
         dispatch({
           type: 'SEARCH_PROPERTIES',
           results,
+          currentSearch,
         });
       })
       .catch(error => console.log(error));
