@@ -14,19 +14,41 @@ class Listings extends React.Component {
       <div>
         <NavigationBar />
         <div className="main-section">
-          {searchBar.results.length === 0 &&
-            <h1>Sorry, no properties are available in this location</h1>}
-          {searchBar.results.length > 0 &&
-            searchBar.results.map((property, index) => {
-              return (
-                <Link key={ index } to={'/listings/' + property.id}>
-                  <div>
-                  <img src={ property.description.photoUrl[0] } alt={"Photo of " + property.address.street}/>
-                    <h1>{property.address.street}</h1>
-                  </div>
-                </Link>
-              );
-            })}
+          {searchBar.results.length === 0 ?
+            <h1 className="is-size-4">Sorry, no properties are available in this location</h1> :
+            <div className="level">
+              <p
+                className="is-size-4 level-left">
+                {`${searchBar.results.length} listings were found in ${searchBar.currentSearch}`}
+              </p>
+            </div>}
+
+          <div className="property-wrapper">
+              {searchBar.results.length > 0 &&
+                searchBar.results.map((property, index) => {
+                  return (
+                    <div key={index} className="property-item">
+                      <Link to={'/listings/' + property.id}>
+                        <div>
+                          <img
+                            className="listing-image"
+                            src={property.description.photoUrl[0]}
+                            alt="Images of houses"
+                          />
+                        </div>
+                        <div className="has-text-left">
+                          <p className="subtitle is-size-6 has-text-weight-bold has-text-black is-uppercase">
+                            {`${property.address.street}, ${property.address.city}`}
+                          </p>
+                          <p className="subtitle is-size-6 is-uppercase has-text-grey">
+                            {`$${property.description.price} dollars per month`}
+                          </p>
+                        </div>
+                      </Link>
+                    </div>
+                  );
+                })}
+          </div>
         </div>
       </div>
     );

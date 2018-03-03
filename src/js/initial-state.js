@@ -17,7 +17,7 @@ const initialState = {
     firstName: '',
     lastName: '',
     isLandlord: false,
-    myProperties: [],
+    ownProperties: [],
     id: '',
   },
   homePage: {
@@ -26,6 +26,7 @@ const initialState = {
   searchBar: {
     input: '',
     results: [],
+    currentSearch: '',
   },
   rentListings: {
     startDate: '',
@@ -41,23 +42,23 @@ const initialState = {
   },
   publishListings: {
     address: {
-      street: "",
-      zipCode: "",
-      city: "",
-      state: "",
-      latitude: "",
-      longitude: ""
+      street: '',
+      zipCode: '',
+      city: '',
+      state: '',
+      latitude: '',
+      longitude: '',
     },
     description: {
-      description: "",
-      bedrooms: "",
-      bathrooms: "",
+      description: '',
+      bedrooms: '',
+      bathrooms: '',
       amenities: [],
       photoUrl: [],
-      price: ""
+      price: '',
     },
-    userId: "",
-  }
+    userId: '',
+  },
 };
 
 export default initialState;

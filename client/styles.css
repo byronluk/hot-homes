@@ -17,3 +17,20 @@ nav.navbar {
 div.modal div.modal-background form.modal-format {
   margin-top: 50px;
 }
+.listing-image {
+  width: 350px;
+  height: auto;
+}
+.property-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+.property-item {
+  width: 30%;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 1px;
+  text-align: center;
+}
