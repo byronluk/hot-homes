@@ -21,6 +21,7 @@ class Listings extends React.Component {
               return (
                 <Link key={ index } to={'/listings/' + property.id}>
                   <div>
+                  <img src={ property.description.photoUrl[0] } alt={"Photo of " + property.address.street}/>
                     <h1>{property.address.street}</h1>
                   </div>
                 </Link>

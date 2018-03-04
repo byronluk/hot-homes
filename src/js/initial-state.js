@@ -40,16 +40,23 @@ const initialState = {
     currentProperty: '',
   },
   publishListings: {
-    bedrooms: '', 
-    bathrooms:'', 
-    street:'', 
-    city:'', 
-    state:'', 
-    zipCode:'', 
-    description: '',
-    amentities:'', 
-    price:'',
-    photoUrl: [],
+    address: {
+      street: "",
+      zipCode: "",
+      city: "",
+      state: "",
+      latitude: "",
+      longitude: ""
+    },
+    description: {
+      description: "",
+      bedrooms: "",
+      bathrooms: "",
+      amenities: [],
+      photoUrl: [],
+      price: ""
+    },
+    userId: "",
   }
 };
 
