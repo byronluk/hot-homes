@@ -23,18 +23,28 @@ class NavigationBar extends React.Component {
           </div>
           <div className="navbar-end">
             {auth.status === 'AUTHENTICATED' ?
-              <div className="navbar-item">
-                <div className="field is-grouped">
-                  <p className="control is-size-5 has-text-justified has-text-dark">
+              <div className="field is-grouped">
+                <div className="navbar-item has-dropdown is-hoverable">
+                  <a className="navbar-link control has-text-justified has-text-dark">
                     {auth.username}
-                  </p>
+                  </a>
+
+                  <div className="navbar-dropdown">
+                    <Link to="/profile" className="navbar-item">Profile</Link>
+                    <Link to="#" className="navbar-item">Rentals</Link>
+                    {auth.isLandlord &&
+                      <Link to="/profile/properties" className="navbar-item">Properties</Link>
+                    }
+                  </div>
+                </div>
+                <div className="navbar-item">
                   <p className="control">
-                    <button
-                      className="button"
+                    <Link
+                    to="/"
+                      className="button is-link is-outlined"
                       name="toggleLogOut"
                       onClick={handleLogOut}
-                    >Log Out</button>
-
+                    >Log Out</Link>
                   </p>
                 </div>
               </div> :
@@ -44,14 +54,14 @@ class NavigationBar extends React.Component {
                     <button
                       className="button is-info"
                       name="toggleSignUp"
-                      onClick={ isHomePage ? () => toggleLogIn(false) : toggleHidden}
+                      onClick={isHomePage ? () => toggleLogIn(false) : toggleHidden}
                     >Sign Up</button>
                   </p>
                   <p className="control">
                     <button
                       className="button is-primary"
                       name="toggleLogIn"
-                      onClick={ isHomePage ? () => toggleLogIn(true) : toggleHidden}
+                      onClick={isHomePage ? () => toggleLogIn(true) : toggleHidden}
                     >Log In</button>
                   </p>
                 </div>

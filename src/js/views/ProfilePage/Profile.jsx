@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import NavigationBar from '../../components/NavigationBar';
-import LandlordDashboard from '../../components/LandlordDashboard/LandLordDashboard';
 
 class Profile extends React.Component {
   render() {
@@ -15,7 +13,6 @@ class Profile extends React.Component {
         <div className="main-section">
           <p>{auth.firstName}</p>
           <p>{auth.isLandlord ? 'Landlord' : 'Tenant' }</p>
-          { auth.isLandlord && <LandlordDashboard /> }
         </div>
       </div>
     );

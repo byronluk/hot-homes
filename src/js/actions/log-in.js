@@ -33,6 +33,13 @@ function authenticationFailed() {
   };
 }
 
+function updateUserProperties(properties) {
+  return {
+    type: 'USER_PROPERTIES',
+    properties,
+  };
+}
+//  database calls
 export function validateAndSubmit() {
   return (dispatch, getState) => {
     const { emailOrUsername, password } = getState().logIn;
@@ -44,12 +51,25 @@ export function validateAndSubmit() {
       .get('./api/users')
       .then(data => {
         var user = isMatching(data.data, emailOrUsername, password);
+        if (user.properties) {
+          dispatch(getUserProperties(user));
+        }
         if (user.hasOwnProperty('firstName')) {
           delete user.password;
           return dispatch(logIn(user));
         } else {
           return dispatch(authenticationFailed());
         }
+      });
+  };
+}
+
+function getUserProperties({ id }) {
+  return (dispatch) => {
+    axios
+      .get(`./api/properties?filter[where][userId]=${id}`)
+      .then(properties => {
+        dispatch(updateUserProperties(properties.data));
       });
   };
 }

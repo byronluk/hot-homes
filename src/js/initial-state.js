@@ -17,7 +17,8 @@ const initialState = {
     firstName: '',
     lastName: '',
     isLandlord: false,
-    ownProperties: [],
+    properties: [],
+    rentals: [],
     id: '',
   },
   homePage: {
@@ -39,6 +40,7 @@ const initialState = {
   currentSession: {
     currentUser: '',
     currentProperty: '',
+    properties: [],
   },
   publishListings: {
     address: {
