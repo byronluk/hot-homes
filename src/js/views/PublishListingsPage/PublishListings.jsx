@@ -1,104 +1,124 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { updateDatabaseProperty } from '../../actions/publish-listings';
 
 class PublishListings extends React.Component {
-  constructor(props) {
-    super(props);
-    this.updateForm = this.updateForm.bind(this);
-  }
-  updateForm(e) {
-    const name = e.target.name;
-    const value = e.target.value;
-    this.props.dispatch(updatePublishListings({ name: name, value: value }))
-  }
-
 
   render() {
-    const { publishListings, updateForm, handleSubmit } = this.props;
+    const { publishListings, updateForm, handleSubmit, handleCancel } = this.props;
     const { description, bedrooms, bathrooms, street, city, state, zipCode, amentities, photoUrl, price } = publishListings;
 
     return (
 
-      <div>
-        <h1>What kind of place are you listing?</h1>
-        <form onSubmit={e => e.preventDefault()}>>
+      <div className='content'>
+        <h3>What kind of place are you listing?</h3>
+        <form onSubmit={e => e.preventDefault()}>
           <div className='field'>
-            <label for='description-input'>Could you please describe your property?</label>
-            <input 
-              type='text'
-              value= {description}
-              onChange= {updateForm}
-              name='description' />
+            <label className='label'>Could you please describe your property?</label>
+            <div className='control'>
+              <textarea
+                className='textarea'
+                value={description}
+                onChange={updateForm}
+                name='description' />
+            </div>
           </div>
           <div className='field'>
-            <label for='guests-number-input'>How many bedrooms?</label>
-            <input
-              type='number'
-              value={bedrooms}
-              onChange={updateForm}
-              name='bedrooms' />
+            <label className='label'>How many bedrooms?</label>
+            <div className='control'>
+              <input
+                type='number'
+                value={bedrooms}
+                onChange={updateForm}
+                name='bedrooms' />
+            </div>
           </div>
           <div className='field'>
-            <label for='roomNumber'>How many bathrooms?</label>
-            <input
-              type='number'
-              value={bathrooms}
-              onChange={updateForm}
-              name='bathrooms' />
+            <label className='label'>How many bathrooms?</label>
+            <div className='control'>
+              <input
+                type='number'
+                value={bathrooms}
+                onChange={updateForm}
+                name='bathrooms' />
+            </div>
           </div>
           <div className='field'>
             <h3>Where's your place located?</h3>
-            <label for='street'>Street Address</label>
-            <input
-              type='text'
-              value={street}
-              onChange={updateForm}
-              name='street' />
-            <label for='city'>City</label>
-            <input
-              type='text'
-              value={city}
-              onChange={updateForm}
-              name='city' />
-            <label for='state'>State</label>
-            <input
-              type='text'
-              value={state}
-              onChange={updateForm}
-              name='state' />
-            <label for='zipCode'>Zip Code</label>
-            <input
-              type='number'
-              value={zipCode}
-              onChange={updateForm}
-              name='zipCode' />
+            <div className='field is-grouped'>
+              <label className='label'>Street Address</label>
+              <p className='control'>
+                <input
+                  type='text'
+                  value={street}
+                  onChange={updateForm}
+                  name='street' />
+              </p>
+            </div>
+            <div className='field is-grouped'>
+              <label className='label'>City</label>
+              <p className='control'>
+                <input
+                  type='text'
+                  value={city}
+                  onChange={updateForm}
+                  name='city' />
+              </p>
+              <label className='label'>State</label>
+              <p className='control'>
+                <input
+                  type='text'
+                  value={state}
+                  onChange={updateForm}
+                  name='state' />
+              </p>
+              <label className='label'>Zip Code</label>
+              <p className='control'>
+                <input
+                  type='number'
+                  value={zipCode}
+                  onChange={updateForm}
+                  name='zipCode' />
+              </p>
+            </div>
           </div>
           <div className='field'>
             <label className='label'>Amentities</label>
-            <input
-              type='text'
-              value={amentities}
-              onChange={updateForm}
-              name='amentities' />
+            <div className='control'>
+              <textarea
+                type='text'
+                value={amentities}
+                onChange={updateForm}
+                name='amentities'></textarea>
+            </div>
           </div>
           <div className='field'>
-            <label for='price'>Price</label>
-            <input
-              type='number'
-              value={price}
-              onChange={updateForm}
-              name='price' />
+            <label className='label'>Price</label>
+            <div className='control'>
+              <input
+                type='number'
+                value={price}
+                onChange={updateForm}
+                name='price' />
+            </div>
           </div>
           <div className='field'>
-            <label for='url'>Put your photo url here:</label>
-            <input
-              type='url'
-              value= {photoUrl}
-              onChange= {updateForm}
-              name='photoUrl' />
+            <label className='label'>Put your photo url here:</label>
+            <div className='control'>
+              <textarea
+                type='url'
+                value={photoUrl}
+                onChange={updateForm}
+                name='photoUrl'></textarea>
+            </div>
           </div>
-          <button type='submit' onClick={ handleSubmit }>Submit</button>
+          <div className='field is-grouped'>
+            <div className='control'>
+              <button type='submit' onClick={handleSubmit}>Submit</button>
+            </div>
+            <div className='control'>
+              <button className='button is-text' onClick={handleCancel} >Cancel</button>
+            </div>
+          </div>
         </form>
 
       </div>
@@ -110,6 +130,7 @@ PublishListings.propTypes = {
   publishListings: PropTypes.object,
   updateForm: PropTypes.func,
   handleSubmit: PropTypes.func,
+  handleCancel: PropTypes.func,
 };
 
 export default PublishListings;
