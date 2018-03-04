@@ -26,6 +26,12 @@
     "password": {
       "type": "string",
       "required": true
+    },
+    "properties": {
+      "type": "array"
+    },
+    "reservations": {
+      "type": "array"
     }
   },
   "validations": [],

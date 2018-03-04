@@ -17,6 +17,13 @@ function currentSessionReducer(state = initialState.currentSession, action) {
       };
     }
 
+    case 'USER_PROPERTIES': {
+      return {
+        ...state,
+        properties: action.properties,
+      };
+    }
+
     default: {
       return state;
     }
