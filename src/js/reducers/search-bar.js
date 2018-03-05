@@ -11,10 +11,11 @@ function searchBarReducer(state = initialState.searchBar, action) {
     }
 
     case 'SEARCH_PROPERTIES': {
-      const { results } = action;
+      const { results, currentSearch } = action;
       return {
         ...state,
         results,
+        currentSearch,
       };
     }
 

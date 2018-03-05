@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch) => {
       geocodeByAddress(event)
       .then(results => getLatLng(results[0]))
       .then(latLng => {
-        dispatch(searchProperties(latLng));
+        dispatch(searchProperties(latLng, event));
       })
     .catch(error => console.log('Error', error));
     },
