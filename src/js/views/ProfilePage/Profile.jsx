@@ -5,15 +5,29 @@ import Footer from '../../components/Footer/Footer';
 
 class Profile extends React.Component {
   render() {
-    const { auth } = this.props;
-
+    const { auth, currentSession } = this.props;
     return (
       <div>
         <NavigationBar />
 
         <div className="main-section">
-          <p>{auth.firstName}</p>
-          <p>{auth.isLandlord ? 'Landlord' : 'Tenant' }</p>
+          <div className="control">
+            <p className="title is-inline-block">Hey {auth.firstName}</p>
+            <span className="tag is-primary">{auth.isLandlord ? 'Landlord' : 'Tenant'}</span>
+          </div>
+          <div className="grid">
+          {!!currentSession.reservations.length &&
+            currentSession.reservations.map((reservation, index) => {
+              const startDate = parseDate(reservation.startDate);
+              const endDate = parseDate(reservation.endDate);
+              return (
+                <div key={index}>
+                  <p>From: {startDate} To: {endDate}</p>
+                </div>
+              );
+            })
+          }
+          </div>
         </div>
         <Footer />
       </div>
@@ -21,8 +35,16 @@ class Profile extends React.Component {
   }
 }
 
+function parseDate(dateString) {
+  const dateObject = new Date(dateString);
+  const updatedDate = dateObject.toString();
+
+  return updatedDate.substring(0, 15);
+}
+
 Profile.propTypes = {
   auth: PropTypes.object,
+  currentSession: PropTypes.object,
 };
 
 export default Profile;

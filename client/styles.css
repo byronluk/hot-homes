@@ -58,6 +58,10 @@ div.modal div.modal-background form.modal-format {
 .property-details hr {
   margin: 0;
 }
+/* profile page ----------------------------------------------------------------*/
+p.title.is-inline-block {
+  margin-right: 5px;
+}
 /* landlord dashboard ---------------------------------------------------------- */
 .property-edit-button {
   margin-left: 20px;

@@ -41,6 +41,8 @@ const initialState = {
     currentUser: '',
     currentProperty: '',
     properties: [],
+    reservations: [],
+    propertyDetails: [],
   },
   publishListings: {
     address: {

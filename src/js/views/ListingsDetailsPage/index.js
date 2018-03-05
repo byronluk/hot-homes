@@ -1,11 +1,13 @@
 import ListingDetails from './ListingDetails';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+import { updateCurrentProperty } from '../../actions/current-session';
 
-// function mapStateToProps(store) {
-//     return {
-//         ...store.currentSession,
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateCurrentProperty(id) {
+      dispatch(updateCurrentProperty(id));
+    },
+  };
+};
 
-// export default connect(mapStateToProps)(ListingDetails);
-export default ListingDetails;
+export default connect(null, mapDispatchToProps)(ListingDetails);

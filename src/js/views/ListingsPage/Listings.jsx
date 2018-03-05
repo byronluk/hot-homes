@@ -6,7 +6,7 @@ import Footer from '../../components/Footer/Footer';
 
 class Listings extends React.Component {
   render() {
-    const { searchBar, updateCurrentProperty } = this.props;
+    const { searchBar } = this.props;
     return (
       <div>
         <NavigationBar />
@@ -25,7 +25,7 @@ class Listings extends React.Component {
                 searchBar.results.map((property, index) => {
                   return (
                     <div key={index} className="property-item">
-                      <Link to={'/listings/' + property.id} onClick={() => updateCurrentProperty(property.id)}>
+                      <Link to={'/listings/' + property.id}>
                         <div>
                           <img
                             className="listing-image"
@@ -55,7 +55,6 @@ class Listings extends React.Component {
 
 Listings.propTypes = {
   searchBar: PropTypes.object,
-  updateCurrentProperty: PropTypes.func,
 };
 
 export default Listings;
