@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import RentListings from '../RentListingsPage';
 import NavigationBar from '../../components/NavigationBar';
+import Footer from '../../components/Footer/Footer';
 
 export default class ListingDetails extends React.Component {
 
@@ -46,6 +47,7 @@ export default class ListingDetails extends React.Component {
           </div>
 
           <RentListings />
+          <Footer />
         </div>
 
       )

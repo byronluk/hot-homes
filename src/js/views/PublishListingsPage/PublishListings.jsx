@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NavigationBar from '../../components/NavigationBar';
+import Footer from '../../components/Footer/Footer';
 
 class PublishListings extends React.Component {
 
@@ -124,10 +125,10 @@ class PublishListings extends React.Component {
             </form>
             </div>
           </div>
-          </div>
-          );
-        }
-      }
+        <Footer />
+      </div>
+        );
+}}
       
 PublishListings.propTypes = {
       publishListings: PropTypes.object,
