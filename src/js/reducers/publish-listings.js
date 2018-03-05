@@ -4,8 +4,8 @@ function publishListingsReducer(state = initalState.publishListings, action) {
     switch (action.type) {
         case 'UPDATE_PUBLISH_LISTINGS_FORM': {
                 const { name, value } = action;
+                console.log(name, value);
                 return {
-                  ...state,
                   [[name]]: value,
                 };
         }

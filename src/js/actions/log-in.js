@@ -51,7 +51,7 @@ export function validateAndSubmit() {
       .get('./api/users')
       .then(data => {
         var user = isMatching(data.data, emailOrUsername, password);
-        if (user.properties) {
+        if (user.isLandlord) {
           dispatch(getUserProperties(user));
         }
         if (user.hasOwnProperty('firstName')) {
@@ -69,6 +69,7 @@ function getUserProperties({ id }) {
     axios
       .get(`./api/properties?filter[where][userId]=${id}`)
       .then(properties => {
+        console.log(properties);
         dispatch(updateUserProperties(properties.data));
       });
   };
