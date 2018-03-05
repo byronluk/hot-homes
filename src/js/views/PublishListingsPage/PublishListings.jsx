@@ -131,6 +131,7 @@ class PublishListings extends React.Component {
       }
     }
 
+      
 PublishListings.propTypes = {
       publishListings: PropTypes.object,
       updateForm: PropTypes.func,
