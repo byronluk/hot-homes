@@ -122,11 +122,16 @@ class PublishListings extends React.Component {
                 </div>
               </div>
             </form>
-
           </div>
-          );
-        }
+
+
+
+
+        </div>
+        );
       }
+    }
+
       
 PublishListings.propTypes = {
           publishListings: PropTypes.object,
