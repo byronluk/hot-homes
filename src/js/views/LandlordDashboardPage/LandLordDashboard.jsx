@@ -30,7 +30,7 @@ class LandlordDashboard extends React.Component {
                       <a className="property-edit-button button">Edit</a>
                     </p>
                     <Link to={'/listings/' + property.id}>
-                      {description.photoUrl.length > 0 &&
+                      {!!description.photoUrl &&
                         <img
                           src={description.photoUrl[0]}
                           alt="Property image"
@@ -47,7 +47,7 @@ class LandlordDashboard extends React.Component {
                       </div>
                       <hr className="divider" />
                       <p className="is-size-5 amenities-title">Amenities</p>
-                      {!!description.amenities.length &&
+                      {!!description.amenities &&
                         <div className="tags amenity-tags">
                           {description.amenities.map((amenity, index) => {
                             return (
