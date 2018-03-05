@@ -1,15 +1,14 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import { Carousel } from 'react-responsive-carousel';
 import RentListings from '../RentListingsPage';
 import NavigationBar from '../../components/NavigationBar';
 import Footer from '../../components/Footer/Footer';
 
-export default class ListingDetails extends React.Component {
-
+class ListingDetails extends React.Component {
   constructor(props) {
     super(props);
-
     this.loading = 'loading...';
 
     this.state = {
@@ -20,6 +19,8 @@ export default class ListingDetails extends React.Component {
 
   componentDidMount() {
     const id = this.props.location.pathname.substr(10);
+    const {updateCurrentProperty} = this.props;
+    updateCurrentProperty(id);
     axios.get(`/api/properties/${id}`)
       .then(response => {
         this.setState({ ...response.data, error: null });
@@ -95,3 +96,10 @@ export default class ListingDetails extends React.Component {
     );
   }
 }
+
+ListingDetails.propTypes = {
+  location: PropTypes.object,
+  updateCurrentProperty: PropTypes.func,
+};
+
+export default ListingDetails;

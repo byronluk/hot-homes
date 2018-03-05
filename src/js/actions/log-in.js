@@ -39,6 +39,20 @@ function updateUserProperties(properties) {
     properties,
   };
 }
+
+function updateUserReservations(reservations) {
+  return {
+    type: 'USER_RESERVATIONS',
+    reservations,
+  };
+}
+
+function UpdateReservationDetails(propertyDetails) {
+  return {
+    type: 'USER_RESERVATIONS_DETAILS',
+    propertyDetails,
+  };
+}
 //  database calls
 export function validateAndSubmit() {
   return (dispatch, getState) => {
@@ -51,11 +65,12 @@ export function validateAndSubmit() {
       .get('./api/users')
       .then(data => {
         var user = isMatching(data.data, emailOrUsername, password);
-        if (user.properties) {
+        if (user.isLandlord) {
           dispatch(getUserProperties(user));
         }
         if (user.hasOwnProperty('firstName')) {
           delete user.password;
+          dispatch(getUserReservations(user));
           return dispatch(logIn(user));
         } else {
           return dispatch(authenticationFailed());
@@ -70,6 +85,31 @@ function getUserProperties({ id }) {
       .get(`./api/properties?filter[where][userId]=${id}`)
       .then(properties => {
         dispatch(updateUserProperties(properties.data));
+      });
+  };
+}
+
+export function getUserReservations({ username }) {
+  return (dispatch) => {
+    axios
+      .get(`./api/reservations?filter[where][username]=${username}`)
+      .then(reservations => {
+        dispatch(updateUserReservations(reservations.data));
+        dispatch(getReservationPropertyDetails(reservations.data));
+      });
+  };
+}
+
+function getReservationPropertyDetails(reservations) {
+  return (dispatch) => {
+    var queryString = '';
+    for (var i = 0; i < reservations.length; i++) {
+      queryString += `filter[where][or][${i}][id]=${reservations[i].propertyID}&`;
+    }
+    axios
+      .get(`./api/properties/?${queryString}`)
+      .then(propertyDetails => {
+        dispatch(UpdateReservationDetails(propertyDetails.data));
       });
   };
 }

@@ -10,7 +10,7 @@ function RentListingReducer(state = initialState.rentListings, action) {
       };
     }
 
-    case 'UPDATE_DATABASE_RESERVATION_FULFILLED': {
+    case 'UPDATE_DATABASE_RESERVATION': {
       return state;
     }
 
