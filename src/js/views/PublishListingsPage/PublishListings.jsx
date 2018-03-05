@@ -124,10 +124,6 @@ class PublishListings extends React.Component {
               </div>
             </form>
           </div>
-
-
-
-
         </div>
         <Footer />
       </div>
@@ -136,7 +132,7 @@ class PublishListings extends React.Component {
 }
 
 PublishListings.propTypes = {
-          publishListings: PropTypes.object,
+      publishListings: PropTypes.object,
       updateForm: PropTypes.func,
       handleSubmit: PropTypes.func,
       handleCancel: PropTypes.func,
