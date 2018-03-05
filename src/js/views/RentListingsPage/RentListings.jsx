@@ -25,10 +25,26 @@ class RentListings extends React.Component {
         let { startDate, endDate, user, property, auth} = this.props;
         startDate = Date.parse(startDate);
         endDate = Date.parse(endDate);
+        const errorEl = document.getElementById('book-listing-error');
+        const successEl = document.getElementById('book-listing-success');
         if(!auth.status == 'ANONYMOUS') {
-            document.getElementById('book-listing-error').innerHTML = 'Please log in before booking';
+            successEl.innerHTML = '';
+            errorEL.innerHTML = 'Please log in before booking';
             return false;
         }
+
+        if(isNaN(startDate) || isNaN(endDate)) {
+            successEl.innerHTML = '';
+            errorEl.innerHTML = 'Please specify a start and end date';
+            return false;
+        }
+
+        if (endDate - startDate < 2419200000) { //28 days of milliseconds
+            successEl.innerHTML = '';
+            errorEl.innerHTML = 'A minimum of one month is required';
+            return false;
+        }
+
         axios.get('/api/reservations').then(response => {
 
             for (let i = 0; i < response.data.length; i++) {
@@ -39,7 +55,8 @@ class RentListings extends React.Component {
                     ((startDate > rStart && startDate < rEnd) ||
                         (endDate < rEnd && endDate > rStart))) {
                     console.log('Reservation start and end dates overlap with another reservation at this location');
-                    document.getElementById('book-listing-error').innerHTML = "This property is already booked for that time!";
+                    successEl.innerHTML = '';
+                    errorEl.innerHTML = "This property is already booked for that time!";
                     return false;
                 }
             }
@@ -50,7 +67,8 @@ class RentListings extends React.Component {
                 startDate: startDate,
                 endDate: endDate,
             }))
-            document.getElementById('book-listing-success').innerHTML = 'Property successfully reserved!';
+            errorEl.innerHTML = '';
+           successEl.innerHTML = 'Property successfully reserved!';
         });
     }
 
