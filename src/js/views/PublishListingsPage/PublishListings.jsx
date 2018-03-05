@@ -123,17 +123,14 @@ class PublishListings extends React.Component {
               </div>
             </form>
           </div>
-
-
-
-
         </div>
+      </div>
         );
       }
     }
 
 PublishListings.propTypes = {
-          publishListings: PropTypes.object,
+      publishListings: PropTypes.object,
       updateForm: PropTypes.func,
       handleSubmit: PropTypes.func,
       handleCancel: PropTypes.func,
