@@ -22,29 +22,35 @@ class RentListings extends React.Component {
     sendDates(e) {
         e.preventDefault();
         console.log('submit button clicked');
-        const { startDate, endDate, user, property, auth} = this.props;
+        let { startDate, endDate, user, property, auth} = this.props;
+        startDate = Date.parse(startDate);
+        endDate = Date.parse(endDate);
         if(!auth.status == 'ANONYMOUS') {
             document.getElementById('book-listing-error').innerHTML = 'Please log in before booking';
             return false;
         }
         axios.get('/api/reservations').then(response => {
 
-            response.data.forEach(reservation => {
-                if (reservation.userId == user && reservation.propertyID == property &&
-                    ((startDate > reservation.startDate && startDate < reservation.endDate) ||
-                        (endDate < reservation.endDate && endDate > reservation.startDate))) {
+            for (let i = 0; i < response.data.length; i++) {
+                let reservation = response.data[i];
+                const rStart = Date.parse(reservation.startDate);
+                const rEnd = Date.parse(reservation.endDate);
+                if (reservation.propertyID == property &&
+                    ((startDate > rStart && startDate < rEnd) ||
+                        (endDate < rEnd && endDate > rStart))) {
                     console.log('Reservation start and end dates overlap with another reservation at this location');
                     document.getElementById('book-listing-error').innerHTML = "This property is already booked for that time!";
                     return false;
                 }
-            })
+            }
 
             this.props.dispatch(updateDatabaseReservation({
-                user: user,
-                property: property,
+                username: user,
+                propertyID: property,
                 startDate: startDate,
                 endDate: endDate,
             }))
+            document.getElementById('book-listing-success').innerHTML = 'Property successfully reserved!';
         });
     }
 
@@ -59,6 +65,7 @@ class RentListings extends React.Component {
 
                     <button type='submit' onClick={this.sendDates}>Rent Now</button>
                     <p id='book-listing-error'></p>
+                    <p id='book-listing-success'></p>
                 </form>
 
 
