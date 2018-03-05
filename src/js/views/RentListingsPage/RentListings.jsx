@@ -20,7 +20,6 @@ class RentListings extends React.Component {
     }
 
     sendDates(e) {
-        e.preventDefault();
         console.log('submit button clicked');
         let { startDate, endDate, user, property, auth} = this.props;
         startDate = Date.parse(startDate);
@@ -84,7 +83,7 @@ class RentListings extends React.Component {
 
                     <button type='submit' onClick={this.sendDates}>Rent Now</button>
                     <p id='book-listing-error'></p>
-
+                    <p id='book-listing-success'></p>
                 </form>
 
 
