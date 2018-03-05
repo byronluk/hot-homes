@@ -4,7 +4,8 @@ import { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 export function updatePublishListings(name, value) {
     return {
         type: 'UPDATE_PUBLISH_LISTINGS_FORM',
-        name, value
+        name,
+        value,
     }
 }
 
@@ -26,7 +27,7 @@ export function updateDatabaseProperty(action) {
             },
             userId: auth.id,
             description: {
-                description: publishListings.description,
+                propertyDescription: publishListings.propertyDescription,
                 bedrooms: publishListings.bedrooms,
                 bathrooms: publishListings.bathrooms,
                 amenities: publishListings.amenities,
@@ -34,12 +35,13 @@ export function updateDatabaseProperty(action) {
                 price: publishListings.price
             },
         };
-        geocodeByAddress(`${publishListings.street} ${publishListings.city}, ${publishingListings.state}`)
+        geocodeByAddress(`${property.address.street} ${property.address.city}, ${property.address.state}`)
             .then(results => getLatLng(results[0]))
             .then(latLng => {
                 property.address.latitude = latLng.lat,
                 property.address.longitude = latLng.lng,
-                axios.post('/api/property', property).then(reponse => {
+                axios.post('/api/properties', property).then(response => {
+                    console.log(response);
                     dispatch({
                         type: 'UPDATE_DATABASE_PROPERTY',
                         payload: response,

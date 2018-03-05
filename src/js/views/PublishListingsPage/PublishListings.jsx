@@ -7,7 +7,7 @@ class PublishListings extends React.Component {
 
   render() {
     const { publishListings, updateForm, handleSubmit, handleCancel } = this.props;
-    const { description, bedrooms, bathrooms, street, city, state, zipCode, amentities, photoUrl, price } = publishListings;
+    const { street, city, state, zipCode, propertyDescription, bedrooms, bathrooms, amentities, photoUrl, price } = publishListings;
 
     return (
       <div>
@@ -21,9 +21,9 @@ class PublishListings extends React.Component {
                 <div className='control'>
                   <textarea
                     className='textarea'
-                    value={description}
+                    value={propertyDescription}
                     onChange={updateForm}
-                    name='description'></textarea>
+                    name='propertyDescription'></textarea>
                 </div>
               </div>
               <div className='field'>
@@ -95,14 +95,23 @@ class PublishListings extends React.Component {
                     name='amentities'></textarea>
                 </div>
               </div>
-              <div className='field'>
+              <div className='field is-horizontal'>
                 <label className='label'>Price</label>
-                <div className='control'>
-                  <input
-                    type='number'
-                    value={price}
-                    onChange={updateForm}
-                    name='price' />
+                <div className='field-body'>
+                  <div className='field is-expanded'>
+                    <div className='field has-addons'>
+                      <p className='control'>
+                        <a className='button is-static'>$</a>
+                      </p>
+                      <p className='control is-expanded'>
+                        <input
+                          type='number'
+                          value={price}
+                          onChange={updateForm}
+                          name='price' />
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className='field'>
@@ -123,18 +132,19 @@ class PublishListings extends React.Component {
                 </div>
               </div>
             </form>
-            </div>
           </div>
+        </div>
         <Footer />
       </div>
-        );
-}}
-      
+    );
+  }
+}
+
 PublishListings.propTypes = {
-      publishListings: PropTypes.object,
-      updateForm: PropTypes.func,
-      handleSubmit: PropTypes.func,
-      handleCancel: PropTypes.func,
-    };
-    
-    export default PublishListings;
+  publishListings: PropTypes.object,
+  updateForm: PropTypes.func,
+  handleSubmit: PropTypes.func,
+  handleCancel: PropTypes.func,
+};
+
+export default PublishListings;
