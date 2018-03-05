@@ -136,10 +136,10 @@ class PublishListings extends React.Component {
 
       
 PublishListings.propTypes = {
-          publishListings: PropTypes.object,
-          updateForm: PropTypes.func,
-          handleSubmit: PropTypes.func,
-          handleCancel: PropTypes.func,
-        };
-        
-        export default PublishListings;
+      publishListings: PropTypes.object,
+      updateForm: PropTypes.func,
+      handleSubmit: PropTypes.func,
+      handleCancel: PropTypes.func,
+    };
+    
+    export default PublishListings;
