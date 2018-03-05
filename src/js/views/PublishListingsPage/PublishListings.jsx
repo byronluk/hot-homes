@@ -22,7 +22,7 @@ class PublishListings extends React.Component {
                     className='textarea'
                     value={description}
                     onChange={updateForm}
-                    name='description' />
+                    name='description'></textarea>
                 </div>
               </div>
               <div className='field'>
