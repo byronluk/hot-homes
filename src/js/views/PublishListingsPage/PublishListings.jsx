@@ -123,6 +123,7 @@ class PublishListings extends React.Component {
                 </div>
               </div>
             </form>
+<<<<<<< HEAD
           </div>
         </div>
         <Footer />
@@ -134,6 +135,16 @@ class PublishListings extends React.Component {
       
 PublishListings.propTypes = {
           publishListings: PropTypes.object,
+=======
+
+          </div>
+          );
+        }
+      }
+      
+PublishListings.propTypes = {
+            publishListings: PropTypes.object,
+>>>>>>> fix bug in merging yfbranch
           updateForm: PropTypes.func,
           handleSubmit: PropTypes.func,
           handleCancel: PropTypes.func,
