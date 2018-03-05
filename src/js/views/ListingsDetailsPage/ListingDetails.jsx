@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Carousel } from 'react-responsive-carousel';
 import RentListings from '../RentListingsPage';
 import NavigationBar from '../../components/NavigationBar';
+import Footer from '../../components/Footer/Footer';
 
 export default class ListingDetails extends React.Component {
 
