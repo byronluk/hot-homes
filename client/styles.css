@@ -46,7 +46,11 @@ div.modal div.modal-background form.modal-format {
 }
 /* landlord dashboard ---------------------------------------------------------- */
 .property-edit-button {
+<<<<<<< HEAD
   margin-left: 20px;
+=======
+  margin-left: 58%;
+>>>>>>> 730c5b49b98e19b93e02847cc7ca0e414f1a8210
 }
 div.carousel-description-container {
   margin-bottom: 40px;
