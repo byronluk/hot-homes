@@ -6,6 +6,7 @@ function mapStoreToProps(store) {
     ...store.rentListings,
     user: store.currentSession.currentUser,
     property: store.currentSession.currentProperty,
+    auth: store.auth,
   };
 }
 
