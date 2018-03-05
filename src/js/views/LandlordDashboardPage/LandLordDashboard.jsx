@@ -20,7 +20,7 @@ class LandlordDashboard extends React.Component {
                 return (
                   <div key={index}>
                     <p
-                      className="is-size-4 has-text-white-ter has-text-justified address-title"
+                      className="is-size-4 has-text-white-ter address-title"
                     >
                       {`${address.street}, ${address.city} ${address.state}`}
                       <a className="property-edit-button button">Edit</a>
@@ -42,7 +42,7 @@ class LandlordDashboard extends React.Component {
                         <span className="tag">{`$${description.price} per month`}</span>
                       </div>
                       <hr className="divider" />
-                      <p className="amenities-title">Amenities</p>
+                      <p className="is-size-5 amenities-title">Amenities</p>
                       {!!description.amenities.length &&
                         <div className="tags amenity-tags">
                           {description.amenities.map((amenity, index) => {

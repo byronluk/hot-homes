@@ -4,12 +4,8 @@ import { Link } from 'react-router-dom';
 import NavigationBar from '../../components/NavigationBar';
 
 class Listings extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
-    const { searchBar } = this.props;
+    const { searchBar, updateCurrentProperty } = this.props;
     return (
       <div>
         <NavigationBar />
@@ -28,7 +24,7 @@ class Listings extends React.Component {
                 searchBar.results.map((property, index) => {
                   return (
                     <div key={index} className="property-item">
-                      <Link to={'/listings/' + property.id}>
+                      <Link to={'/listings/' + property.id} onClick={() => updateCurrentProperty(property.id)}>
                         <div>
                           <img
                             className="listing-image"
@@ -57,6 +53,7 @@ class Listings extends React.Component {
 
 Listings.propTypes = {
   searchBar: PropTypes.object,
+  updateCurrentProperty: PropTypes.func,
 };
 
 export default Listings;

@@ -44,6 +44,20 @@ div.modal div.modal-background form.modal-format {
   margin: 5px 5px 5px 15px;
   text-align: left;
 }
+/* listing details page -----------------------------------------------------------*/
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 25px;
+}
+.property-details .amenities-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 5px 10px 15px;
+}
+.property-details hr {
+  margin: 0;
+}
 /* landlord dashboard ---------------------------------------------------------- */
 .property-edit-button {
   margin-left: 20px;
