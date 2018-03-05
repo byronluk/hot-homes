@@ -123,11 +123,8 @@ class PublishListings extends React.Component {
               </div>
             </form>
           </div>
-
-
-
-
         </div>
+      </div>
         );
       }
     }
