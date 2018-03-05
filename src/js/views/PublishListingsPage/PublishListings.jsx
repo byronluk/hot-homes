@@ -105,13 +105,14 @@ class PublishListings extends React.Component {
                 </div>
               </div>
               <div className='field'>
-                <label className='label'>Put your photo url here:</label>
+                <label className='label'>Select photo url here:</label>
                 <div className='control'>
-                  <textarea
+                  <input
                     type='url'
                     value={photoUrl}
                     onChange={updateForm}
-                    name='photoUrl'></textarea>
+                    name='photoUrl' 
+                    mulitple />
                 </div>
               </div>
               <div className='field is-grouped'>
