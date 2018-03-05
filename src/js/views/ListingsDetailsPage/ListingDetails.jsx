@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Carousel } from 'react-responsive-carousel';
 import RentListings from '../RentListingsPage';
 import NavigationBar from '../../components/NavigationBar';
+import Footer from '../../components/Footer/Footer';
 
 export default class ListingDetails extends React.Component {
 
@@ -80,16 +81,19 @@ export default class ListingDetails extends React.Component {
                 }
               </div>
               <RentListings />
+              <Footer />
             </div>
-          </div>
-        </div >
-      );
-    }
-    return (
+            </div>
+            </div>
+
+            )
+      
+          }
+          return (
       <div>
-        <h3>Error! Something went wrong on our end. More details below</h3>
-        <p>{this.state.error}</p>
-      </div>
-    );
-  }
-}
+              <h3>Error! Something went wrong on our end. More details below</h3>
+              <p>{this.state.error}</p>
+            </div>
+            );
+          }
+        }

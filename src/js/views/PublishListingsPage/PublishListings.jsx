@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NavigationBar from '../../components/NavigationBar';
+import Footer from '../../components/Footer/Footer';
 
 class PublishListings extends React.Component {
 
@@ -22,7 +23,7 @@ class PublishListings extends React.Component {
                     className='textarea'
                     value={description}
                     onChange={updateForm}
-                    name='description' />
+                    name='description'></textarea>
                 </div>
               </div>
               <div className='field'>
@@ -105,14 +106,13 @@ class PublishListings extends React.Component {
                 </div>
               </div>
               <div className='field'>
-                <label className='label'>Put your photo url here:</label>
-                <div className='control'>
-                  <textarea
-                    type='url'
-                    value={photoUrl}
-                    onChange={updateForm}
-                    name='photoUrl'></textarea>
-                </div>
+                <label className='label'>Select images:</label>
+                <input
+                  type='file'
+                  value={photoUrl}
+                  onChange={updateForm}
+                  name='photoUrl'
+                  multiple />
               </div>
               <div className='field is-grouped'>
                 <div className='control'>
@@ -123,18 +123,18 @@ class PublishListings extends React.Component {
                 </div>
               </div>
             </form>
+            </div>
           </div>
-        </div>
+        <Footer />
       </div>
-    );
-  }
-}
-
+        );
+}}
+      
 PublishListings.propTypes = {
-  publishListings: PropTypes.object,
-  updateForm: PropTypes.func,
-  handleSubmit: PropTypes.func,
-  handleCancel: PropTypes.func,
-};
-
-export default PublishListings;
+      publishListings: PropTypes.object,
+      updateForm: PropTypes.func,
+      handleSubmit: PropTypes.func,
+      handleCancel: PropTypes.func,
+    };
+    
+    export default PublishListings;
