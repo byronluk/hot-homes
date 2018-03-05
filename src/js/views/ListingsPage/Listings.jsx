@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import NavigationBar from '../../components/NavigationBar';
+import Footer from '../../components/Footer/Footer';
 
 class Listings extends React.Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class Listings extends React.Component {
                 })}
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

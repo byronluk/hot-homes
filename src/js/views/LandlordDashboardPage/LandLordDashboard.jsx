@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Carousel } from 'react-responsive-carousel';
 import NavigationBar from '../../components/NavigationBar';
+import Footer from '../../components/Footer/Footer';
 
 class LandlordDashboard extends React.Component {
   render() {
@@ -53,6 +54,7 @@ class LandlordDashboard extends React.Component {
                         </div>
                       }
                     </div>
+
                   </div>
                 );
               })}
@@ -61,6 +63,7 @@ class LandlordDashboard extends React.Component {
           {!properties.length &&
             <h2>You current have no listings</h2>}
         </div>
+        <Footer />
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NavigationBar from '../../components/NavigationBar';
+import Footer from '../../components/Footer/Footer';
 
 class Profile extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class Profile extends React.Component {
           <p>{auth.firstName}</p>
           <p>{auth.isLandlord ? 'Landlord' : 'Tenant' }</p>
         </div>
+        <Footer />
       </div>
     );
   }

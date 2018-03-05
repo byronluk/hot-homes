@@ -46,12 +46,12 @@ class RentListings extends React.Component {
         return (
             <div>
 
-                <form>
+                <form onSubmit={ e => e.preventDefault() }>
 
                     <input type='date' value={this.props.startDate} onChange={this.updateDates} name='startDate' />
                     <input type='date' value={this.props.endDate} onChange={this.updateDates} name='endDate' />
 
-                    <button type='submit' onClick={this.sendDates} />
+                    <button type='submit' onClick={this.sendDates}>Book</button>
 
                 </form>
 
