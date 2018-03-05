@@ -122,7 +122,8 @@ class PublishListings extends React.Component {
                 </div>
               </div>
             </form>
-
+            </div>
+          </div>
           </div>
           );
         }
