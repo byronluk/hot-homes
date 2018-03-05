@@ -84,6 +84,7 @@ function getUserProperties({ id }) {
     axios
       .get(`./api/properties?filter[where][userId]=${id}`)
       .then(properties => {
+        console.log(properties);
         dispatch(updateUserProperties(properties.data));
       });
   };
