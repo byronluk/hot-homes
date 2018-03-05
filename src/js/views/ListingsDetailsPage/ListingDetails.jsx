@@ -83,6 +83,8 @@ export default class ListingDetails extends React.Component {
               <RentListings />
               <Footer />
             </div>
+            </div>
+            </div>
 
             )
       
