@@ -67,12 +67,18 @@ class RentListings extends React.Component {
                     <button type='submit' onClick={this.sendDates}>Rent Now</button>
                     <p id='book-listing-error'></p>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <p id='book-listing-success'></p>
 =======
+=======
+>>>>>>> add footer
 =======
                     <button type='submit' onClick={this.sendDates}>Book</button>
 
 >>>>>>> add footer
+<<<<<<< HEAD
+>>>>>>> add footer
+=======
 >>>>>>> add footer
                 </form>
 

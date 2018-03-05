@@ -81,25 +81,17 @@ export default class ListingDetails extends React.Component {
                 }
               </div>
               <RentListings />
+              <Footer />
             </div>
-          </div>
-<<<<<<< HEAD
-        </div >
-      );
-=======
 
-          <RentListings />
-          <Footer />
-        </div>
-
-      )
->>>>>>> add footer
-    }
-    return (
+            )
+      
+          }
+          return (
       <div>
-        <h3>Error! Something went wrong on our end. More details below</h3>
-        <p>{this.state.error}</p>
-      </div>
-    );
-  }
-}
+              <h3>Error! Something went wrong on our end. More details below</h3>
+              <p>{this.state.error}</p>
+            </div>
+            );
+          }
+        }
