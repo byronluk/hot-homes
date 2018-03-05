@@ -105,14 +105,13 @@ class PublishListings extends React.Component {
                 </div>
               </div>
               <div className='field'>
-                <label className='label'>Put your photo url here:</label>
-                <div className='control'>
-                  <textarea
-                    type='url'
-                    value={photoUrl}
-                    onChange={updateForm}
-                    name='photoUrl'></textarea>
-                </div>
+                <label className='label'>Select images:</label>
+                <input
+                  type='file'
+                  value={photoUrl}
+                  onChange={updateForm}
+                  name='photoUrl'
+                  multiple />
               </div>
               <div className='field is-grouped'>
                 <div className='control'>
@@ -123,18 +122,17 @@ class PublishListings extends React.Component {
                 </div>
               </div>
             </form>
+
           </div>
-        </div>
-      </div>
-    );
-  }
-}
-
+          );
+        }
+      }
+      
 PublishListings.propTypes = {
-  publishListings: PropTypes.object,
-  updateForm: PropTypes.func,
-  handleSubmit: PropTypes.func,
-  handleCancel: PropTypes.func,
-};
-
-export default PublishListings;
+          publishListings: PropTypes.object,
+          updateForm: PropTypes.func,
+          handleSubmit: PropTypes.func,
+          handleCancel: PropTypes.func,
+        };
+        
+        export default PublishListings;
