@@ -83,8 +83,17 @@ export default class ListingDetails extends React.Component {
               <RentListings />
             </div>
           </div>
+<<<<<<< HEAD
         </div >
       );
+=======
+
+          <RentListings />
+          <Footer />
+        </div>
+
+      )
+>>>>>>> add footer
     }
     return (
       <div>
