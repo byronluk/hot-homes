@@ -21,7 +21,7 @@ export default class App extends React.Component {
           <Route exact path='/listings' component={Listings} />
           <Route path='/listings/:id' component={ListingsDetails} />
           <Route path='/listings/:id/:book' component={RentListings} />
-          <Route path='/profile' component={Profile} />
+          <Route exact path='/profile' component={Profile} />
           <Route path='/profile/properties' component={LandlordDashboard} />
           <Route path='/profile/publish' component={PublishListings} />
         </div>
