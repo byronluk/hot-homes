@@ -5,20 +5,19 @@
       "jsx": true,
       "mocha": true
     },
-    "sourceType": "module"    
+    "sourceType": "module"
   },
   "env": {
     "browser": true,
     "node": true
   },
-  "plugins": [
-    "react"
-  ],
+  "plugins": ["react"],
   "extends": ["eslint:recommended", "plugin:react/recommended", "loopback"],
   "rules": {
     "semi": 2,
     "no-console": 0,
     "object-curly-spacing": 0,
-    "max-len": 0
+    "max-len": 0,
+    "comma-dangle": 0
   }
 }
