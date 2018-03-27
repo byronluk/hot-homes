@@ -7,6 +7,10 @@
     "dataSource": "MongoDB",
     "public": false
   },
+  "User": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
   "AccessToken": {
     "dataSource": "MongoDB",
     "public": false
