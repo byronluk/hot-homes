@@ -10,15 +10,15 @@ import authReducer from './reducers/auth';
 import publishListingsReducer from './reducers/publish-listings';
 
 const reducer = combineReducers({
-    signUp: signUpReducer,
-    logIn: logInReducer,
-    homePage: homePageReducer,
-    searchBar: searchBarReducer,
-    rentListings: rentListingReducer,
-    navBar: navBarReducer,
-    currentSession: currentSessionReducer,
-    auth: authReducer,
-    publishListings: publishListingsReducer
+  signUp: signUpReducer,
+  logIn: logInReducer,
+  homePage: homePageReducer,
+  searchBar: searchBarReducer,
+  rentListings: rentListingReducer,
+  navBar: navBarReducer,
+  currentSession: currentSessionReducer,
+  auth: authReducer,
+  publishListings: publishListingsReducer
 });
 
 export default reducer;
