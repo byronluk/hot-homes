@@ -2,11 +2,9 @@
   "name": "hothomes",
   "version": "1.0.0",
   "description": "",
+  "license": "ISC",
+  "author": "",
   "main": "server/server.js",
-  "engines": {
-    "node": ">=4",
-    "npm": "5.7.1"
-  },
   "scripts": {
     "build": "lessc src/css/style.less client/styles.css && webpack",
     "less": "lessc src/css/style.less client/styles.css",
@@ -14,8 +12,6 @@
     "start": "npm run build && node .",
     "posttest": "npm run lint && nsp check"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
     "babel": "^6.23.0",
@@ -50,8 +46,8 @@
     "redux-promise-middleware": "^5.0.0",
     "redux-thunk": "^2.2.0",
     "serve-favicon": "^2.0.1",
-    "style-loader": "^0.20.2",
     "strong-error-handler": "^2.0.0",
+    "style-loader": "^0.20.2",
     "thunk": "0.0.1",
     "webpack": "^3.11.0",
     "webpack-cli": "^2.0.9"
@@ -65,5 +61,9 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "nsp": "^2.1.0"
+  },
+  "engines": {
+    "node": ">=4",
+    "npm": "5.7.1"
   }
 }
