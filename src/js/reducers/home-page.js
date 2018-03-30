@@ -1,4 +1,4 @@
-import initialState from '../initalState';
+import initialState from '../initialState';
 
 function homePageReducer(state = initialState.homePage, action) {
   switch (action.type) {

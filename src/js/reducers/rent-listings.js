@@ -1,4 +1,4 @@
-import initialState from '../initialState-state';
+import initialState from '../initialState';
 
 function RentListingReducer(state = initialState.rentListings, action) {
   switch (action.type) {
