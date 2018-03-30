@@ -1,12 +1,11 @@
-import initialState from '../initial-state';
+import initialState from '../initalState';
 
 function homePageReducer(state = initialState.homePage, action) {
   switch (action.type) {
-
     case 'TOGGLE_LOG_IN': {
       return {
         ...state,
-        toggleLogIn: action.toggleLogIn,
+        toggleLogIn: action.toggleLogIn
       };
     }
 
@@ -17,4 +16,3 @@ function homePageReducer(state = initialState.homePage, action) {
 }
 
 export default homePageReducer;
-
