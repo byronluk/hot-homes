@@ -24,7 +24,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "customUser": {
+      "type": "belongsTo",
+      "model": "customUser",
+      "foreignKey": "userId"
+    },
+    "property": {
+      "type": "belongsTo",
+      "model": "property",
+      "foreignKey": "propertyId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

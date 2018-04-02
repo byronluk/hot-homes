@@ -1,13 +1,12 @@
-import initialState from '../initial-state';
+import initialState from '../initialState';
 
 function signUpReducer(state = initialState.signUp, action) {
   switch (action.type) {
-
     case 'UPDATE_SIGN_UP_FORM': {
       const { name, value } = action.payload;
       return {
         ...state,
-        [[name]]: value,
+        [[name]]: value
       };
     }
 

@@ -1,12 +1,11 @@
-import initialState from '../initial-state';
+import initialState from '../initialState';
 
 function searchBarReducer(state = initialState.searchBar, action) {
   switch (action.type) {
-
     case 'SEARCH_BAR_CHANGE': {
       return {
         ...state,
-        input: action.input,
+        input: action.input
       };
     }
 
@@ -15,7 +14,7 @@ function searchBarReducer(state = initialState.searchBar, action) {
       return {
         ...state,
         results,
-        currentSearch,
+        currentSearch
       };
     }
 

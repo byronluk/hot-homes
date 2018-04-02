@@ -19,10 +19,10 @@
       "default": false
     },
     "properties": {
-      "type": "array"
+      "type": ["object"]
     },
     "reservations": {
-      "type": "array"
+      "type": ["object"]
     }
   },
   "validations": [],

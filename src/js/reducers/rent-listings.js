@@ -1,12 +1,11 @@
-import initialState from '../initial-state';
+import initialState from '../initialState';
 
 function RentListingReducer(state = initialState.rentListings, action) {
   switch (action.type) {
-
     case 'UPDATE_RESERVATION_DATES': {
       return {
         ...state,
-        [[action.payload.name]]: action.payload.value,
+        [[action.payload.name]]: action.payload.value
       };
     }
 

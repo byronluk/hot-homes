@@ -1,13 +1,12 @@
-import initialState from '../initial-state';
+import initialState from '../initialState';
 
 function logInReducer(state = initialState.logIn, action) {
   switch (action.type) {
-
     case 'UPDATE_LOG_IN_FORM': {
       const { name, value } = action;
       return {
         ...state,
-        [[name]]: value,
+        [[name]]: value
       };
     }
 
