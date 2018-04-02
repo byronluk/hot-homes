@@ -1,8 +1,12 @@
 module.exports = {
   MongoDB: {
+    host: '',
+    port: 0,
+    url: '',
+    database: 'hothomes',
+    password: '',
     name: 'MongoDB',
-    connector: 'loopback-connector-mongodb',
-    url:
-      'mongodb://heroku_447q7njv:7r84ftus584hjjur0as7d19gne@ds021922.mlab.com:21922/heroku_447q7njv'
+    user: '',
+    connector: 'mongodb'
   }
 };
