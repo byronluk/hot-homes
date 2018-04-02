@@ -3,8 +3,6 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Carousel } from 'react-responsive-carousel';
 import RentListings from '../RentListingsPage';
-import NavigationBar from '../../components/NavigationBar';
-import Footer from '../../components/Footer/Footer';
 
 class ListingDetails extends React.Component {
   constructor(props) {
@@ -13,79 +11,86 @@ class ListingDetails extends React.Component {
 
     this.state = {
       description: this.loading,
-      address: this.loading,
+      address: this.loading
     };
   }
 
   componentDidMount() {
     const id = this.props.location.pathname.substr(10);
-    const {updateCurrentProperty} = this.props;
+    const { updateCurrentProperty } = this.props;
     updateCurrentProperty(id);
-    axios.get(`/api/properties/${id}`)
+    axios
+      .get(`/api/properties/${id}`)
       .then(response => {
         this.setState({ ...response.data, error: null });
       })
       .catch(err => {
         console.log('Something went wrong: ' + err);
         this.setState({
-          error: err,
+          error: err
         });
       });
   }
 
   render() {
     const { description, address } = this.state;
-    console.log(description, address);
     if (!this.state.error) {
       return (
         <div>
-          <NavigationBar />
-          {description.price &&
+          {description.price && (
             <div className="main-section">
-              {!!description.photoUrl &&
+              {!!description.photoUrl && (
                 <Carousel>
                   {!!description.photoUrl.length &&
                     description.photoUrl.map((photo, index) => {
                       return (
                         <div key={index}>
                           <img src={photo} alt="property images" />
-                        </div>);
-                    })
-                  }
-                </Carousel>}
+                        </div>
+                      );
+                    })}
+                </Carousel>
+              )}
               <div className="grid">
                 <div className="property-details">
-                  <p
-                    className="is-size-4 address-title"
-                  >
+                  <p className="is-size-4 address-title">
                     {`${address.street}, ${address.city} ${address.state}`}
                   </p>
                   <p>{`${description.description}`}</p>
                   <div className="tags main-info-tags">
-                    <span className="tag">{`${description.bedrooms} bedrooms`}</span>
-                    <span className="tag">{`${description.bathrooms} bathrooms`}</span>
-                    <span className="tag">{`$${description.price} per month`}</span>
+                    <span className="tag">{`${
+                      description.bedrooms
+                    } bedrooms`}</span>
+                    <span className="tag">{`${
+                      description.bathrooms
+                    } bathrooms`}</span>
+                    <span className="tag">{`$${
+                      description.price
+                    } per month`}</span>
                   </div>
                   <hr />
                   <p className="amenities-title">Amenities</p>
-                  {!!description.amenities &&
+                  {!!description.amenities && (
                     <div>
-                      {!!description.amenities.length &&
+                      {!!description.amenities.length && (
                         <div className="tags amenity-tags">
                           {description.amenities.map((amenity, index) => {
                             return (
-                              <span className="tag is-primary" key={index}>{amenity}</span>
+                              <span className="tag is-primary" key={index}>
+                                {amenity}
+                              </span>
                             );
                           })}
                         </div>
-                      }
+                      )}
                     </div>
-                  }
+                  )}
                 </div>
                 <RentListings />
               </div>
-            </div>}
-        </div >
+            </div>
+          )}
+        </div>
       );
     }
     return (
@@ -99,7 +104,7 @@ class ListingDetails extends React.Component {
 
 ListingDetails.propTypes = {
   location: PropTypes.object,
-  updateCurrentProperty: PropTypes.func,
+  updateCurrentProperty: PropTypes.func
 };
 
 export default ListingDetails;

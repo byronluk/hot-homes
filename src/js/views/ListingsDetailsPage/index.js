@@ -1,13 +1,10 @@
 import ListingDetails from './ListingDetails';
 import { connect } from 'react-redux';
-import { updateCurrentProperty } from '../../actions/current-session';
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = ({ auth }) => {
   return {
-    updateCurrentProperty(id) {
-      dispatch(updateCurrentProperty(id));
-    },
+    userId: auth.id
   };
 };
 
-export default connect(null, mapDispatchToProps)(ListingDetails);
+export default connect(mapStateToProps)(ListingDetails);

@@ -1,24 +1,20 @@
 import { combineReducers } from 'redux';
-import signUpReducer from './reducers/sign-up';
-import logInReducer from './reducers/log-in';
-import homePageReducer from './reducers/home-page';
-import searchBarReducer from './reducers/search-bar';
+import searchBarReducer from './components/SearchBar/searchBarReducer';
 import rentListingReducer from './reducers/rent-listings';
-import navBarReducer from './reducers/navigation-bar';
+import navBarReducer from './components/common/NavigationBar/navigationBarReducer';
 import currentSessionReducer from './reducers/current-session';
-import authReducer from './reducers/auth';
+import authReducer from './components/common/authReducer';
 import publishListingsReducer from './reducers/publish-listings';
+import { reducer as formReducer } from 'redux-form';
 
 const reducer = combineReducers({
-  signUp: signUpReducer,
-  logIn: logInReducer,
-  homePage: homePageReducer,
-  searchBar: searchBarReducer,
   rentListings: rentListingReducer,
-  navBar: navBarReducer,
   currentSession: currentSessionReducer,
+  publishListings: publishListingsReducer,
+  searchBar: searchBarReducer,
+  navBar: navBarReducer,
   auth: authReducer,
-  publishListings: publishListingsReducer
+  form: formReducer
 });
 
 export default reducer;

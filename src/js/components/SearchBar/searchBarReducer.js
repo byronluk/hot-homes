@@ -1,4 +1,4 @@
-import initialState from '../initialState';
+import initialState from '../../initialState';
 
 function searchBarReducer(state = initialState.searchBar, action) {
   switch (action.type) {

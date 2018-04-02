@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import SearchBar from './SearchBar';
-import { onSearchBarChange, searchProperties } from '../../actions/search-bar';
+import { onSearchBarChange, searchProperties } from './searchBarActions';
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
 const mapStateToProps = ({ searchBar }) => {
   return { searchBar };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     handleInputChange(event) {
       dispatch(onSearchBarChange(event));
@@ -20,12 +20,12 @@ const mapDispatchToProps = (dispatch) => {
     handleLocationSelect(event) {
       dispatch(onSearchBarChange(event));
       geocodeByAddress(event)
-      .then(results => getLatLng(results[0]))
-      .then(latLng => {
-        dispatch(searchProperties(latLng, event));
-      })
-    .catch(error => console.log('Error', error));
-    },
+        .then(results => getLatLng(results[0]))
+        .then(latLng => {
+          dispatch(searchProperties(latLng, event));
+        })
+        .catch(error => console.log('Error', error));
+    }
   };
 };
 

@@ -1,20 +1,24 @@
 import PublishListings from './PublishListings';
 import { connect } from 'react-redux';
-import { updatePublishListings, updateDatabaseProperty, cancelForm } from '../../actions/publish-listings';
+import {
+  updatePublishListings,
+  updateDatabaseProperty,
+  cancelForm
+} from '../../actions/publish-listings';
 
 function mapStateToProps({ publishListings }) {
   return {
-    publishListings,
+    publishListings
   };
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     updateForm(event) {
       dispatch(updatePublishListings(event.target.name, event.target.value));
     },
     handleSubmit(event) {
-      //event.preventDefault();
+      // event.preventDefault();
       dispatch(updateDatabaseProperty());
     },
     handleCancel(event) {
@@ -22,8 +26,7 @@ const mapDispatchToProps = (dispatch) => {
       if (event.target !== event.currentTarget) return;
       dispatch(cancelForm());
     }
-  }
-
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(PublishListings);

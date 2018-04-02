@@ -1,19 +1,9 @@
-import initialState from '../initialState';
+import initialState from '../../initialState';
 
 const authReducer = (state = initialState.auth, action) => {
   switch (action.type) {
     case 'LOGGED_IN': {
       const { user } = action;
-      return {
-        ...state,
-        status: 'AUTHENTICATED',
-        ...user
-      };
-    }
-
-    case 'CREATE_USER_FULFILLED': {
-      const user = action.payload.data;
-      delete user.password;
       return {
         ...state,
         status: 'AUTHENTICATED',

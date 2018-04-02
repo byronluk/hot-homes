@@ -1,15 +1,15 @@
 const axios = require('axios');
-import history from '../history';
+import history from '../../history';
 
-export const onSearchBarChange = (value) => {
+export const onSearchBarChange = value => {
   return {
     type: 'SEARCH_BAR_CHANGE',
-    input: value,
+    input: value
   };
 };
 
 export const searchProperties = (location, currentSearch) => {
-  return (dispatch) => {
+  return dispatch => {
     axios
       .get('/api/properties')
       .then(response => {
@@ -17,7 +17,7 @@ export const searchProperties = (location, currentSearch) => {
         dispatch({
           type: 'SEARCH_PROPERTIES',
           results,
-          currentSearch,
+          currentSearch
         });
       })
       .catch(error => console.log(error));
@@ -33,7 +33,7 @@ function filterLocations(data, location) {
       lat1: properties[i].address.latitude,
       lon1: properties[i].address.longitude,
       lat2: location.lat,
-      lon2: location.lng,
+      lon2: location.lng
     };
     var distance = distanceInMilesBetweenEarthCoordinates(coordinates);
     if (distance <= 25) {
@@ -57,9 +57,9 @@ function distanceInMilesBetweenEarthCoordinates({ lat1, lon1, lat2, lon2 }) {
   lat1 = degreesToRadians(lat1);
   lat2 = degreesToRadians(lat2);
 
-  var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-          Math.sin(dLon / 2) * Math.sin(dLon / 2) *
-          Math.cos(lat1) * Math.cos(lat2);
+  var a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
 
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   return earthRadiusMiles * c;
