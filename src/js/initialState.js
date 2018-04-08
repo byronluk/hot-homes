@@ -1,48 +1,34 @@
 const initialState = {
-  signUp: {
-    firstName: '',
-    lastName: '',
-    email: '',
-    username: '',
-    password: '',
-  },
-  logIn: {
-    emailOrUsername: '',
-    password: '',
-  },
   auth: {
     status: 'ANONYMOUS',
-    username: '',
+    accessToken: '',
     email: '',
     firstName: '',
     lastName: '',
     isLandlord: false,
     properties: [],
     rentals: [],
-    id: '',
-  },
-  homePage: {
-    toggleLogIn: false,
+    id: ''
   },
   searchBar: {
     input: '',
     results: [],
-    currentSearch: '',
+    currentSearch: ''
   },
   rentListings: {
     startDate: '',
-    endDate: '',
+    endDate: ''
   },
   navBar: {
     toggleSignUp: false,
-    toggleLogIn: false,
+    toggleLogIn: false
   },
   currentSession: {
     currentUser: '',
     currentProperty: '',
     properties: [],
     reservations: [],
-    propertyDetails: [],
+    propertyDetails: []
   },
   publishListings: {
     street: '',
@@ -57,8 +43,8 @@ const initialState = {
     amenities: [],
     photoUrl: [],
     price: '',
-    userId: '',
-  },
+    userId: ''
+  }
 };
 
 export default initialState;

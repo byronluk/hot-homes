@@ -1,25 +1,16 @@
-import initialState from '../initial-state';
+import initialState from '../../../initialState';
 
 function navBarReducer(state = initialState.navBar, action) {
   switch (action.type) {
-
     case 'TOGGLE_HIDDEN': {
-      const { name } = action;
+      const { name, value } = action;
       return {
         ...state,
-        [[name]]: true,
+        [[name]]: !!value
       };
     }
 
     case 'LOGGED_IN': {
-      return initialState.navBar;
-    }
-
-    case 'CREATE_USER': {
-      return initialState.navBar;
-    }
-
-    case 'CANCEL_SIGN_UP': {
       return initialState.navBar;
     }
 
@@ -30,4 +21,3 @@ function navBarReducer(state = initialState.navBar, action) {
 }
 
 export default navBarReducer;
-

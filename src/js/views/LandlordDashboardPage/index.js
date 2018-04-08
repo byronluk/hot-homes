@@ -5,10 +5,4 @@ const mapStateToProps = ({ currentSession }) => {
   return { currentSession };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(LandlordDashboard);
+export default connect(mapStateToProps)(LandlordDashboard);

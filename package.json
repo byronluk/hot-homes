@@ -2,11 +2,9 @@
   "name": "hothomes",
   "version": "1.0.0",
   "description": "",
+  "license": "ISC",
+  "author": "",
   "main": "server/server.js",
-  "engines": {
-    "node": ">=4",
-    "npm": "5.7.1"
-  },
   "scripts": {
     "build": "lessc src/css/style.less client/styles.css && webpack",
     "less": "lessc src/css/style.less client/styles.css",
@@ -14,8 +12,6 @@
     "start": "npm run build && node .",
     "posttest": "npm run lint && nsp check"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
     "babel": "^6.23.0",
@@ -29,13 +25,14 @@
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "css-loader": "^0.28.10",
+    "dotenv": "^5.0.1",
     "helmet": "^1.3.0",
     "history": "^4.7.2",
     "less": "^3.0.1",
     "loopback": "^3.0.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^4.0.0",
-    "loopback-connector-mongodb": "^3.3.1",
+    "loopback-connector-mongodb": "^3.4.1",
     "path": "^0.12.7",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
@@ -47,11 +44,12 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-devtools": "^3.4.1",
+    "redux-form": "^7.3.0",
     "redux-promise-middleware": "^5.0.0",
     "redux-thunk": "^2.2.0",
     "serve-favicon": "^2.0.1",
-    "style-loader": "^0.20.2",
     "strong-error-handler": "^2.0.0",
+    "style-loader": "^0.20.2",
     "thunk": "0.0.1",
     "webpack": "^3.11.0",
     "webpack-cli": "^2.0.9"
@@ -65,5 +63,9 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "nsp": "^2.1.0"
+  },
+  "engines": {
+    "node": ">=4",
+    "npm": "5.7.1"
   }
 }

@@ -1,53 +1,52 @@
-import initialState from '../initial-state';
+import initialState from '../initialState';
 
 function currentSessionReducer(state = initialState.currentSession, action) {
   switch (action.type) {
     case 'LOGGED_IN': {
       return {
         ...state,
-        currentUser: action.user.username,
+        currentUser: action.user.username
       };
     }
 
     case 'UPDATE_CURRENT_USER': {
       return {
         ...state,
-        currentUser: action.payload,
+        currentUser: action.payload
       };
     }
 
     case 'UPDATE_CURRENT_PROPERTY': {
       return {
         ...state,
-        currentProperty: action.payload,
+        currentProperty: action.payload
       };
     }
 
     case 'USER_PROPERTIES': {
       return {
         ...state,
-        properties: action.properties,
+        properties: action.properties
       };
     }
 
     case 'USER_RESERVATIONS': {
       return {
         ...state,
-        reservations: action.reservations,
+        reservations: action.reservations
       };
     }
 
     case 'USER_RESERVATIONS_DETAILS': {
       return {
         ...state,
-        propertyDetails: action.propertyDetails,
+        propertyDetails: action.propertyDetails
       };
     }
 
     default: {
       return state;
     }
-
   }
 }
 
