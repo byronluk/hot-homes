@@ -15,11 +15,11 @@ _Back End_
 * MongoDB for database
 * Express / Node.js for server
 
-#### Set-up
+### Set-up
 
 * run npm start
 
-#### Todo
+### Todo
 
 * [x] Host project on Heroku and connect to mLabs
 * [ ] Fix bug with loopback-connector-mongodb
